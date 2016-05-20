@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抽屉3animation+class方式移动到左边距//结束不完美,结束太快</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .top {
+            background: yellow;
+            height: 50px;
+            width: 100%;
+            font-size: 20px;
+        }
+
+        .jishi {
+            /*vertical-align: center;*/
+        }
+
+        .menu {
+            /*height:50px;*/
+            /*width:50px;*/
+            background: url(ic_menu_3x.png);
+            background-size: 35px, 35px;
+            opacity: 0.4;
+            display: inline-block;
+            margin-left: 25px;
+            margin-top: 8px;
+        }
+
+        .menu:hover {
+            opacity: 0.87;
+            cursor: pointer;
+        }
+
+        .dr {
+            width: 200px;
+            background-color: orange;
+            float: left;
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-left: -200px;
+
+        }
+
+        .show {
+            animation: right 2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes right {
+            from {
+                left: 0;
+            }
+            to {
+                left: 200px;
+            }
+        }
+
+        .hide {
+            animation:left 2s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes left{
+            from{left:0;}
+            to{left:-200px;}
+        }
+    </style>
+    <script src=../jquery-2.2.3.min.js></script>
+</head>
+<body>
+<div class="container">
+    <div class="top" style="">
+        <div class="menu" style="width:35px; height:35px;">
+        </div>
+        <p class="jishi" style="display:inline-block;position:relative;top:-10px;">抽屉效果</p>
+    </div>
+    <div class="dr">
+        <a>sdjkafhasdjklf</a>;
+        <p></p>;
+        <a>fkljgbsxdfk</a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(".dr").css("height", window.innerHeight);
+    $(".menu").click(function () {
+        $(".dr").addClass("show");
+        $(".dr").delay(2000).removeClass("hide");
+        var a=$(".dr").attr("class");
+        console.log(a);
+        event.stopPropagation();
+    })
+    $("body").click(function () {
+        $(".dr").addClass("hide");
+        $(".dr").delay(2000).removeClass("show");
+
+    })
+</script>
+</body>
+</html>

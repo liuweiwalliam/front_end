@@ -1,0 +1,26 @@
+.left{
+    float:left;
+    width:450px;
+    height:auto;
+    background-color:aqua;
+
+}
+.right{
+          float:left ;
+          width:450px;
+     height:auto;
+    margin-left:20px;
+    background-color:yellow;
+}
+.col{
+    -webkit-column-count:4;
+    -webkit-column-rule-style:dotted;
+}
+.center{
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    height:300px;
+    width:300px;
+    background-color:yellow;
+}

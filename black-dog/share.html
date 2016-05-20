@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport"-->
+    <!--content="initial-scale:1.0; maximu-scale:1.0;user-scalable=no">-->
+    <!--<meta content="yes" name="apple-mobile-web-app-capable">-->
+    <!--<meta content="black" name="apple-mobile-web-app-status-bar-style">-->
+    <!--<meta content="telephone=no" name="format-detection">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />-->
+    <title>播放</title>
+    <style type="text/css">
+        html{
+            width:1080px;
+            height:1920px;
+        }
+        body {
+            height:1920px;
+            width: 1080px;
+            background: url(bg.png) no-repeat;
+            background-size: 1080px 1920px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            overflow: hidden;
+        }
+
+        .top {
+            padding-top: 44px;
+            height: 114px;
+            width: 100%;
+            background-color: #f64f4e;
+        }
+
+        .listentoher {
+            margin-left: 40px;
+
+        }
+
+        .down {
+            float: right;
+            margin-right: 30px;
+            margin-top: -95px;
+
+        }
+
+        .block2 {
+            background-color:rgba(255,255,255,0.4);
+            margin-top:120px;
+            /*height:824px;*/
+            width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20px;
+            padding-bottom: 180px;
+        }
+
+        .portrait {
+            padding-top: 80px;
+            padding-left: 40px;
+            opacity: 1;
+        }
+
+        .name-time {
+            margin-left: 40px;
+            line-height: 0;
+            display: inline-block;
+            position: relative;
+            top: -50px;
+        }
+
+        .slogan {
+            margin-left: 40px;
+            margin-top: 50px;
+            font-size: 50px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .player2 {
+            width: 880px;
+            height: 208px;
+            margin-left: 0;
+            margin-right: 40px;
+            background-color:rgba(255,255,255, 0.7);
+        }
+
+        .personallogo {
+            width: 200px;
+            height: 200px;
+            border: 0 solid white;
+            border-radius: 50%;
+        }
+
+        .sus {
+            position: relative;
+            top: -200px;
+            display: none;
+        }
+
+        .play {
+            position: relative;
+            top: -200px;
+        }
+
+        .progress {
+            width:700px;
+            position: relative;
+            top: -320px;
+            right: -240px;
+            overflow:hidden;
+        }
+
+        .progressbar {
+            background: #F1EFF0;
+            height: .5rem;
+            border-radius: .25rem;
+            width: 70%;
+            position: relative;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .played {
+            background: #F25252;
+            height: .5rem;
+            border-radius: .25rem;
+            width: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .played::after {
+            content: '';
+            display: block;
+            height: .8rem;
+            width: .8rem;
+            background: #F25252;
+            border-radius: 50%;
+            position: absolute;
+            right: -.6rem;
+            top: -.1rem;
+        }
+
+        .progress p {
+            color: white;
+        }
+
+        .p {
+            font-size: 50px;
+            position:relative;
+            top:-20px;
+        }
+
+        .dl {
+            text-align: center;
+            height: 300px;
+            width: 300px;
+            margin-top:200px;
+            margin-left:auto;
+            margin-right:auto;;
+        }
+        a.one:link{
+            text-decoration: none;
+        }
+        a.one:visited{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+    <div class="listentoher">
+        <img src="listentoher.png" style="height:74px;width:272px;">
+    </div>
+    <div class="down">
+        <a href="http://openbox.mobilem.360.cn/index/d/sid/3256776"><img
+                src="down.png" style="height:106px;width:106px;"></a>
+    </div>
+</div>
+<div class="block2">
+    <div class="portrait">
+        <img src="wc.png">
+        <div class="name-time">
+            <p style="font-size:50px;color:white;font-weight:bold;">官方小主—仙贝</p>
+            <time style="font-size:35px;color:white;">2016-01-13 18:40</time>
+        </div>
+        <div class="slogan">听她说APP V1.0版，大体介绍听她说APP V1.0版，大体介绍听她说APP V1.0版，大体介绍听她说APP V1.0版，大体介绍听她说APP V1.0版，大体介绍听她说APP V1.0版，大体介绍听她说APP V1.0版，大体介绍听</div>
+        <div class="player">
+        </div>
+        <div class="player2">
+            <div class="personallogo">
+                <img src="wc.png">
+            </div>
+            <div class="play">
+                <img src="p.png">
+            </div>
+            <div class="sus">
+                <img src="s.png">
+            </div>
+            <div class="bar">
+                <div class="progress">
+                    <div class="progressbar">
+                        <div class="played"></div>
+                    </div>
+                    <p class="p">
+                        <span class="curr">--:--</span>/<span class="total">--:--</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio src="k.mp3"></audio>
+    <!--<audio src="http://abv.cn/music/光辉岁月.mp3"></audio>-->
+
+</div>
+<div class="dl">
+    <a class="one" href="http://openbox.mobilem.360.cn/index/d/sid/3256776"><img
+            src="an.png" style="height:90px;width:75px"></a>
+    <a class="one" href="http://openbox.mobilem.360.cn/index/d/sid/3256776"><p
+            style="font-size:50px;color:white">点击下载</p></a>
+</div>
+<script type="text/javascript" src="zepto.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var interval;
+
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        var eventtype = IsPC() ? "click" : "tap";
+        $(".play").on(eventtype, (function () {
+            $("audio").get(0).play();
+            $(".total").text(strtotime($("audio").get(0).duration));
+            $(".curr").text(strtotime($("audio").get(0).currentTime));
+            interval = setInterval(function () {
+                $(".curr").text(strtotime($("audio").get(0).currentTime));
+                $(".progressbar .played").css("width", $("audio").get(0).currentTime / $("audio").get(0).duration * 100 + "%");
+            }, 1000);
+            $(".play").hide();
+            $(".sus").show();
+        }));
+
+        $(".sus").on(eventtype, (function () {
+            $(".play").show();
+            $("audio").get(0).pause();
+            clearInterval(interval)
+            $(".sus").hide();
+        }));
+
+        function strtotime(time) {
+            time = parseInt(time);
+            return parseInt(time / 60) + ':' + (time % 60 >= 10 ? time % 60 : 0 + '' + time % 60);
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call&apply</title>
+</head>
+<body>
+  <script type="text/javascript">
+      var a=1;
+      console.log(window.location);
+         function test(){
+
+         }
+             var p={
+                 me:function(msg1,msg2){
+                    alert(msg1+msg2);
+             }
+             }
+      p.me.call(test,["2","pondsapple"]);
+  </script>
+</body>
+</html>

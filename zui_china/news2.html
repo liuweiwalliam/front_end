@@ -1,0 +1,878 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<HTML class="no-js">
+<!--<![endif]-->
+<HEAD>
+    <META content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <title>醉中国</title>
+    <meta name="keywords" content="醉中国"/>
+    <meta name="description" content="醉中国"/>
+    <link href="css/lib.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/page_order.min.css" rel="stylesheet" type="text/css"/>
+
+    <!--[if lt IE 7]><![endif]-->
+    <SCRIPT language="javascript" src="js/kunyihtml5.min.js"
+            type="text/javascript"></SCRIPT>
+    <SCRIPT language="javascript" src="js/kunyilibrary.js"
+            type="text/javascript"></SCRIPT>
+    <LINK href="css/normalize.css" rel="stylesheet" type="text/css"/>
+    <LINK href="css/common.css" rel="stylesheet" type="text/css"/>
+    <LINK href="css/china_cn.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/lib.min.js"></script>
+    <script src="js/ce0164d6694a47d6a25d868da360e426.js"></script>
+    <script src="js/585f358dc13c4e3681417745b2f17680.js"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?83c398f911e8de79137526c032c59235";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<LINK href="css/clearbox.css" rel="stylesheet" type="text/css"/>
+<SCRIPT src="js/clearbox.js" type="text/javascript"></SCRIPT>
+<BODY id="company">
+<SCRIPT language="javascript" src="js/kunyi.init.js"
+        type="text/javascript"></SCRIPT>
+<!--HotNews-->
+<DIV class="HotNews">
+    <DIV class="columnSpace" id="elem-FrontNews_list01-1415927864060"
+         name="资讯列表">
+        <script type="text/javascript">
+            // <![CDATA[
+            FrontNews_list01['FrontNews_list01-1415927864060_init'] = function () {
+                var showDegree = 0;
+                var showQuestionTag = 0;
+                var showMessageCount = 0;
+                var otherShowDegree = 0;
+                var otherShowMessageCount = 0;
+                var otherShowQuestionTag = 0;
+                if (showDegree == '1' || showQuestionTag == '1' || showMessageCount == '1') {
+                    FrontNews_list01.getAjaxValueByNewsId("93", "false", showDegree, showMessageCount, showQuestionTag, "FrontNews_list01-1415927864060_VisitedCount_1", "FrontNews_list01-1415927864060_CommentCount_1", "FrontNews_list01-1415927864060_showQuestionTag_1");
+                }
+                if (otherShowDegree == '1' || otherShowQuestionTag == '1' || otherShowMessageCount == '1') {
+                    FrontNews_list01.getAjaxValueByNewsId("92", "false", otherShowDegree, otherShowMessageCount, otherShowQuestionTag, "FrontNews_list01-1415927864060_VisitedCount_2", "FrontNews_list01-1415927864060_CommentCount_2", "FrontNews_list01-1415927864060_showQuestionTag_2");
+                    FrontNews_list01.getAjaxValueByNewsId("89", "false", otherShowDegree, otherShowMessageCount, otherShowQuestionTag, "FrontNews_list01-1415927864060_VisitedCount_3", "FrontNews_list01-1415927864060_CommentCount_3", "FrontNews_list01-1415927864060_showQuestionTag_3");
+                    FrontNews_list01.getAjaxValueByNewsId("74", "false", otherShowDegree, otherShowMessageCount, otherShowQuestionTag, "FrontNews_list01-1415927864060_VisitedCount_4", "FrontNews_list01-1415927864060_CommentCount_4", "FrontNews_list01-1415927864060_showQuestionTag_4");
+                }
+            }
+            function setVisited(id, linkUrl, detailOpenStyle) {
+                $.get("/FrontNews.do", "method=getVisitedCountByAjax&newsId=" + id, function (data) {
+                    var linkUrl1 = linkUrl;
+                    var OpenStyle = detailOpenStyle
+                    var url = '/FrontNews.do?method=setVisitedCountByAjax&newsId=' + id + '&times=' + data;
+                    $.post(url, function (data) {
+                        window.open(linkUrl1, OpenStyle);
+                    });
+                }, 'html');
+            }
+            $(FrontNews_list01['FrontNews_list01-1415927864060_init']);
+            // ]]>
+            Date.prototype.Format = function (fmt) { //author: meizz
+                var o = {
+                    "M+": this.getMonth() + 1,
+                    "d+": this.getDate(),
+                    "h+": this.getHours(),
+                    "m+": this.getMinutes(),
+                    "s+": this.getSeconds(),
+                    "q+": Math.floor((this.getMonth() + 3) / 3),
+                    "S": this.getMilliseconds()
+                };
+                if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+                for (var k in o)
+                    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                return fmt;
+            }
+            window.onload = function () {
+                var startDate = "";
+                var endDate = "";
+                if (startDate != "") {
+                    if (endDate != "") {
+                        var newDate = new Date().Format("yyyy/MM/dd");
+                        var newDateValue = Date.parse(newDate);
+                        var endDate1 = endDate.replace(/-/g, "/");
+                        var endDateValue = Date.parse(endDate1);
+                        if (endDateValue - newDateValue < 0) {
+                            var infoMakerValue = document.getElementById("93_infoMaker");
+                            if (infoMakerValue != null) {
+                                infoMakerValue.style.display = "none";
+                            }
+                        } else {
+                            var infoMakerValue = document.getElementById("93_infoMaker");
+                            if (infoMakerValue != null) {
+                                infoMakerValue.style.display = "block";
+                            }
+                        }
+                    } else {
+                        var infoMakerValue = document.getElementById("93_infoMaker");
+                        if (infoMakerValue != null) {
+                            infoMakerValue.style.display = "block";
+                        }
+                    }
+                }
+                var startDate = "2016-01-02";
+                var endDate = "";
+                if (startDate != "") {
+                    if (endDate != "") {
+                        var newDate = new Date().Format("yyyy/MM/dd");
+                        var newDateValue = Date.parse(newDate);
+                        var endDate1 = endDate.replace(/-/g, "/");
+                        var endDateValue = Date.parse(endDate1);
+                        if (endDateValue - newDateValue < 0) {
+                            var infoMakerValue = document.getElementById("92_infoMaker");
+                            if (infoMakerValue != null) {
+                                infoMakerValue.style.display = "none";
+                            }
+                        } else {
+                            var infoMakerValue = document.getElementById("92_infoMaker");
+                            if (infoMakerValue != null) {
+                                infoMakerValue.style.display = "block";
+                            }
+                        }
+                    } else {
+                        var infoMakerValue = document.getElementById("92_infoMaker");
+                        if (infoMakerValue != null) {
+                            infoMakerValue.style.display = "block";
+                        }
+                    }
+                }
+                var startDate = "2015-12-12";
+                var endDate = "";
+                if (startDate != "") {
+                    if (endDate != "") {
+                        var newDate = new Date().Format("yyyy/MM/dd");
+                        var newDateValue = Date.parse(newDate);
+                        var endDate1 = endDate.replace(/-/g, "/");
+                        var endDateValue = Date.parse(endDate1);
+                        if (endDateValue - newDateValue < 0) {
+                            var infoMakerValue = document.getElementById("89_infoMaker");
+                            if (infoMakerValue != null) {
+                                infoMakerValue.style.display = "none";
+                            }
+                        } else {
+                            var infoMakerValue = document.getElementById("89_infoMaker");
+                            if (infoMakerValue != null) {
+                                infoMakerValue.style.display = "block";
+                            }
+                        }
+                    } else {
+                        var infoMakerValue = document.getElementById("89_infoMaker");
+                        if (infoMakerValue != null) {
+                            infoMakerValue.style.display = "block";
+                        }
+                    }
+                }
+                var startDate = "";
+                var endDate = "";
+                if (startDate != "") {
+                    if (endDate != "") {
+                        var newDate = new Date().Format("yyyy/MM/dd");
+                        var newDateValue = Date.parse(newDate);
+                        var endDate1 = endDate.replace(/-/g, "/");
+                        var endDateValue = Date.parse(endDate1);
+                        if (endDateValue - newDateValue < 0) {
+                            var infoMakerValue = document.getElementById("74_infoMaker");
+                            if (infoMakerValue != null) {
+                                infoMakerValue.style.display = "none";
+                            }
+                        } else {
+                            var infoMakerValue = document.getElementById("74_infoMaker");
+                            if (infoMakerValue != null) {
+                                infoMakerValue.style.display = "block";
+                            }
+                        }
+                    } else {
+                        var infoMakerValue = document.getElementById("74_infoMaker");
+                        if (infoMakerValue != null) {
+                            infoMakerValue.style.display = "block";
+                        }
+                    }
+                }
+            }
+        </script>
+        <div id="FrontNews_list01-1415927864060" class="FrontNews_list01-d3_c2">
+            <ul class="comstyle newslist-01">
+                <li class="content column-num1">
+                    <div class="pic">
+                        <a href="/news_detail/newsId=93.html"
+                           title="郑州启元国际小学学生参观醉中国钧瓷旗舰店" target="_self">
+                            <img src="ypic/45b46175-5382-4a83-a98e-7b87796c2628.jpg"
+                                 alt="郑州启元国际小学学生参观醉中国钧瓷旗舰店"
+                                 title="郑州启元国际小学学生参观醉中国钧瓷旗舰店"/></a>
+                    </div>
+                    <div class="newslist">
+                        <ul>
+                            <li class="summary">
+                                <h3>概要：</h3>
+                                <p></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="newstitle">
+                        <ul>
+                            <li class="title">
+                                <h3>
+                                    <a href="/news_detail/newsId=93.html"
+                                       title="郑州启元国际小学学生参观醉中国钧瓷旗舰店"
+                                       target="_self">
+                                        郑州启元国际小学学生参观醉中国钧瓷旗舰店</a>
+                                </h3>
+                            </li>
+                            <li class="date"><span>发布时间：</span>2016年4月16日
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="clearBoth"></li>
+            </ul>
+            <ul class="comstyle newslist-02">
+                <li class="content column-num1">
+                    <div class="newstitle">
+                        <ul>
+                            <li class="title">
+                                <h3><a href="/news_detail/newsId=92.html"
+                                       title="2016新年致辞" target="_self">
+                                    2016新年致辞</a>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li class="date"><span>发布时间：</span>2016年1月2日
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="clearBoth"></li>
+                <li class="content column-num1">
+                    <div class="newstitle">
+                        <ul>
+                            <li class="title">
+                                <h3><a href="/news_detail/newsId=89.html"
+                                       title="【金知豫页】天青色等总理，而我在等你"
+                                       target="_self">
+                                    【金知豫页】天青色等总理，而我在等你</a>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li class="date"><span>发布时间：</span>2015年12月12日
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="clearBoth"></li>
+                <li class="content column-num1">
+                    <div class="newstitle">
+                        <ul>
+                            <li class="title">
+                                <h3><a href="/news_detail/newsId=74.html"
+                                       title="刘俊杰与他的“醉中国”" target="_self">
+                                    刘俊杰与他的“醉中国”</a>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li class="date"><span>发布时间：</span>2015年5月22日
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="clearBoth"></li>
+            </ul>
+        </div>
+    </DIV>
+    <A class="ANewsJump" href="/news_3.html"> <IMG height="33"
+                                                   src="ypic/more02.jpg"
+                                                   width="142"/> <IMG
+            class="ImageHover" height="33" src="ypic/more01.jpg"
+            width="142"/> </A> <A class="close" href="javascript:void(0)"
+                                  id="close"> <IMG height="35"
+                                                   src="ypic/closeb.jpg"
+                                                   width="35"/> <IMG
+        class="ImageHover" height="35" src="ypic/closea.jpg" width="35"/>
+</A></DIV>
+<!--end HotNews-->
+<DIV class="pageWidth wrap" id="box_root">
+    <DIV class="header">
+        <DIV class="header_con">
+            <DIV class="head_logo" id="box_header_1">
+                <DIV class="columnSpace"
+                     id="elem-FrontSpecifies_show01-1415858886997" name="说明页">
+                    <div id="FrontSpecifies_show01-1415858886997"
+                         class="FrontSpecifies_show01-d3_c1">
+                        <div class="describe htmledit">
+                            <a href="index.html"><img
+                                    data-original="ypic/logo.png"
+                                    height="46"
+                                    src="ypic/logo.png"
+                                    width="240px"/> </a></div>
+                    </div>
+                </DIV>
+            </DIV>
+
+            <DIV class="menu" id="box_nav_1">
+                <UL>
+                    <LI><A href="zuichina1.html"> <IMG
+                            alt="醉中国" data-original="ypic/m01.png"
+                            height="50" src="ypic/m01.png" title="醉中国
+
+" width="90"/> <IMG alt="醉中国" class="ImageHover"
+                    data-original="ypic/m01.png" height="50"
+                    src="ypic/m01.png" title="醉中国" width="90"/> <IMG
+
+                            class="MenuICO" height="9" src="ypic/current.jpg"
+                            width="90"/> </A></LI>
+                    <LI><A href="obj1.html"> <IMG alt="工艺礼品"
+                                                  data-original="ypic/m02.png"
+                                                  height="50"
+                                                  src="ypic/m02.png"
+                                                  title="工艺礼品"
+
+                                                  width="90"/>
+                        <IMG alt="工艺礼品" class="ImageHover"
+                             data-original="ypic/m02.png" height="50"
+                             src="ypic/m02.png" title="工艺礼品" width="90"/> <IMG
+
+                                class="MenuICO" height="9"
+                                src="ypic/current.jpg" width="90"/> </A></LI>
+                    <LI><A href="order1.html"> <IMG
+                            alt="私人定制" data-original="ypic/m03.png"
+                            height="50" src="ypic/m03.png" title="私人定制"
+
+                            width="90"/> <IMG alt="私人定制" class="ImageHover"
+                                              data-original="ypic/m03.png"
+                                              height="50" src="ypic/m03.png"
+                                              title="私人定制" width="90"/> <IMG
+
+                            class="MenuICO" height="9" src="ypic/current.jpg"
+                            width="90"/> </A></LI>
+                    <LI><A href="news1.html"> <IMG
+                            alt="鲜知要问" data-original="ypic/m04.png"
+                            height="50" src="ypic/m04.png" title="鲜知要问"
+
+                            width="90"/> <IMG alt="鲜知要问" class="ImageHover"
+                                              data-original="ypic/m04.png"
+                                              height="50" src="ypic/m04.png"
+                                              title="鲜知要问" width="90"/> <IMG
+
+                            class="MenuICO" height="9" src="ypic/current.jpg"
+                            width="90"/> </A></LI>
+                    <LI><A href="con1.html"> <IMG alt="联系我们"
+                                                  data-original="ypic/m05.png"
+                                                  height="50"
+                                                  src="ypic/m05.png"
+                                                  title="联系我们" width="90"/>
+                        <IMG alt="联系我们" class="ImageHover"
+                             data-original="ypic/m05.png" height="50"
+                             src="ypic/m05.png" title="联系我们" width="90"/>
+                        <IMG class="MenuICO" height="9" src="ypic/current.jpg"
+                             width="90"/> </A></LI>
+                </UL>
+            </DIV>
+            <DIV class="clear"></DIV>
+        </DIV>
+    </DIV>
+    <!--end header-->
+    <DIV id="bannar" >
+        <DIV class="bannar_con" style="background-color:#4f484f;"
+             style="vertical-align:center;" >
+            <DIV class="b_adver" id="box_b_1" style="dispaly:inline" >
+                <DIV class="columnSpace"
+                     id="elem-FrontSpecifies_show01-14158621625643" name="说明页">
+                    <div id="FrontSpecifies_show01-14158621625643"
+                         class="FrontSpecifies_show01-d1_c1" style="background-color:#4f484f;"><img
+                            data-original="ypic/o1.jpg"
+                            src="ypic/o1.jpg"/> </div>
+                </DIV>
+            </DIV>
+            <img alt="" src="ypic/k3.png"/>
+
+            <DIV class="clear"></DIV>
+        </DIV>
+    </DIV>
+    <!--end bannar-->
+    <DIV class="ContentBase main">
+        <DIV class="con_cate">
+            <DIV class="side_cate">
+                <DIV class="columnSpace"
+                     id="elem-FrontComContent_list01-14158619271683"
+                     name="通用内容列表">
+                    <div id="FrontComContent_list01-14158619271683"
+                         class="FrontComContent_list01-d1_c1">
+                        <div class="menu-first">
+                            <script type="text/javascript">
+                                //<![CDATA[
+                                FrontComContent_list01['FrontComContent_list01-14158619271683_init'] = function () {
+                                    FrontComContent_list01.d1extNoContainCategoryAlternate('FrontComContent_list01-14158619271683');
+                                }
+                                $(FrontComContent_list01['FrontComContent_list01-14158619271683_init']);
+                                // ]]>
+                            </script>
+                            <ul class="list2">
+                                <li class="menu-none"><a id="comContent2_17"
+                                                         href="news3.html"
+                                                         title="商家活动"
+                                                         class="menu-text1">
+                                    商家活动</a>
+                                </li>
+                                <li class="menu-none"><a id="comContent2_12"
+                                                         href="news2.html"
+                                                         title="走进大师"
+                                                         class="menu-text1">走近大师
+                                </a>
+                                </li>
+                                <li class="menu-none"><a id="comContent2_11"
+                                                         href="news1.html"
+                                                         title="行业资讯"
+                                                         class="menu-text1">
+                                    行业资讯</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </DIV>
+            </DIV>
+            <DIV class="bread" id="box_bread">
+                <DIV class="columnSpace"
+                     id="elem-FrontPublic_breadCrumb01-14158618460313"
+                     name="面包屑">
+                    <div id="FrontPublic_breadCrumb01-14158618460313"
+                         class="FrontPublic_breadCrumb01-d1_c1">
+                        <div>
+                            您现在的位置：<a href="/index.html" target="_self">首页</a>
+                            -&nbsp;<a href="/order.html" target="_self">订制</a>
+                            -&nbsp;定制专线
+                        </div>
+                    </div>
+                </DIV>
+            </DIV>
+            <DIV class="clear"></DIV>
+        </DIV>
+        <DIV class="clear"></DIV>
+        <DIV class="container news_list" id="box_con_1">
+            <TABLE border="0" cellpadding="0" cellspacing="0" width="100%">
+                <TBODY>
+                <TR>
+                    <TD align="right" valign="top" width="40%">
+                        <div class="title_002">
+                            <img data-original="ypic/master.png" height="60"
+                                 src="ypic/master.png" width="300"/></div>
+                        <DIV class="columnSpace"
+                             id="elem-FrontSpecifies_show01-1415950807695"
+                             name="说明页">
+                            <div id="FrontSpecifies_show01-1415950807695"
+                                 class="FrontSpecifies_show01-d1_c1"><p
+                                    style="text-indent: 2em;">
+                                醉中国，取“沉醉于中国文化”之意，致力于打造中国传统手工艺跨境电商平台，以“特色礼品定制”、“珍藏品保值回购”和“品牌连锁加盟”为主要经营模式。作品涵盖官瓷、唐三彩、仰韶彩陶、汴秀、菊花瓷、钧瓷六大系列，造型千余种。在本模块我们将为您提供最新的行业资讯，带您掌握最新的文化信息。
+                            </p>
+                            </div>
+                        </DIV>
+                    </TD>
+                    <TD valign="top" width="5%"> </TD>
+                    <TD class="news_list" valign="top" width="55%">
+                        <DIV class="columnSpace"
+                             id="elem-FrontNews_list01-1419219737604"
+                             name="资讯列表">
+                            <script type="text/javascript">
+                                // <![CDATA[
+                                FrontNews_list01['FrontNews_list01-1419219737604_init'] = function () {
+                                    var showDegree = 0;
+                                    var showQuestionTag = 0;
+                                    var showMessageCount = 0;
+                                    var otherShowDegree = 0;
+                                    var otherShowMessageCount = 0;
+                                    var otherShowQuestionTag = 0;
+                                    if (showDegree == '1' || showQuestionTag == '1' || showMessageCount == '1') {
+                                        FrontNews_list01.getAjaxValueByNewsId("93", "false", showDegree, showMessageCount, showQuestionTag, "FrontNews_list01-1419219737604_VisitedCount_1", "FrontNews_list01-1419219737604_CommentCount_1", "FrontNews_list01-1419219737604_showQuestionTag_1");
+                                        FrontNews_list01.getAjaxValueByNewsId("92", "false", showDegree, showMessageCount, showQuestionTag, "FrontNews_list01-1419219737604_VisitedCount_2", "FrontNews_list01-1419219737604_CommentCount_2", "FrontNews_list01-1419219737604_showQuestionTag_2");
+                                        FrontNews_list01.getAjaxValueByNewsId("89", "false", showDegree, showMessageCount, showQuestionTag, "FrontNews_list01-1419219737604_VisitedCount_3", "FrontNews_list01-1419219737604_CommentCount_3", "FrontNews_list01-1419219737604_showQuestionTag_3");
+                                        FrontNews_list01.getAjaxValueByNewsId("74", "false", showDegree, showMessageCount, showQuestionTag, "FrontNews_list01-1419219737604_VisitedCount_4", "FrontNews_list01-1419219737604_CommentCount_4", "FrontNews_list01-1419219737604_showQuestionTag_4");
+                                    }
+                                }
+                                function setVisited(id, linkUrl, detailOpenStyle) {
+                                    $.get("/FrontNews.do", "method=getVisitedCountByAjax&newsId=" + id, function (data) {
+                                        var linkUrl1 = linkUrl;
+                                        var OpenStyle = detailOpenStyle
+                                        var url = '/FrontNews.do?method=setVisitedCountByAjax&newsId=' + id + '&times=' + data;
+                                        $.post(url, function (data) {
+                                            window.open(linkUrl1, OpenStyle);
+                                        });
+                                    }, 'html');
+                                }
+                                $(FrontNews_list01['FrontNews_list01-1419219737604_init']);
+                                // ]]>
+                                Date.prototype.Format = function (fmt) { //author: meizz
+                                    var o = {
+                                        "M+": this.getMonth() + 1,
+                                        "d+": this.getDate(),
+                                        "h+": this.getHours(),
+                                        "m+": this.getMinutes(),
+                                        "s+": this.getSeconds(),
+                                        "q+": Math.floor((this.getMonth() + 3) / 3),
+                                        "S": this.getMilliseconds()
+                                    };
+                                    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+                                    for (var k in o)
+                                        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                                    return fmt;
+                                }
+                                window.onload = function () {
+                                    var startDate = "";
+                                    var endDate = "";
+                                    if (startDate != "") {
+                                        if (endDate != "") {
+                                            var newDate = new Date().Format("yyyy/MM/dd");
+                                            var newDateValue = Date.parse(newDate);
+                                            var endDate1 = endDate.replace(/-/g, "/");
+                                            var endDateValue = Date.parse(endDate1);
+                                            if (endDateValue - newDateValue < 0) {
+                                                var infoMakerValue = document.getElementById("93_infoMaker");
+                                                if (infoMakerValue != null) {
+                                                    infoMakerValue.style.display = "none";
+                                                }
+                                            } else {
+                                                var infoMakerValue = document.getElementById("93_infoMaker");
+                                                if (infoMakerValue != null) {
+                                                    infoMakerValue.style.display = "block";
+                                                }
+                                            }
+                                        } else {
+                                            var infoMakerValue = document.getElementById("93_infoMaker");
+                                            if (infoMakerValue != null) {
+                                                infoMakerValue.style.display = "block";
+                                            }
+                                        }
+                                    }
+                                    var startDate = "2016-01-02";
+                                    var endDate = "";
+                                    if (startDate != "") {
+                                        if (endDate != "") {
+                                            var newDate = new Date().Format("yyyy/MM/dd");
+                                            var newDateValue = Date.parse(newDate);
+                                            var endDate1 = endDate.replace(/-/g, "/");
+                                            var endDateValue = Date.parse(endDate1);
+                                            if (endDateValue - newDateValue < 0) {
+                                                var infoMakerValue = document.getElementById("92_infoMaker");
+                                                if (infoMakerValue != null) {
+                                                    infoMakerValue.style.display = "none";
+                                                }
+                                            } else {
+                                                var infoMakerValue = document.getElementById("92_infoMaker");
+                                                if (infoMakerValue != null) {
+                                                    infoMakerValue.style.display = "block";
+                                                }
+                                            }
+                                        } else {
+                                            var infoMakerValue = document.getElementById("92_infoMaker");
+                                            if (infoMakerValue != null) {
+                                                infoMakerValue.style.display = "block";
+                                            }
+                                        }
+                                    }
+                                    var startDate = "2015-12-12";
+                                    var endDate = "";
+                                    if (startDate != "") {
+                                        if (endDate != "") {
+                                            var newDate = new Date().Format("yyyy/MM/dd");
+                                            var newDateValue = Date.parse(newDate);
+                                            var endDate1 = endDate.replace(/-/g, "/");
+                                            var endDateValue = Date.parse(endDate1);
+                                            if (endDateValue - newDateValue < 0) {
+                                                var infoMakerValue = document.getElementById("89_infoMaker");
+                                                if (infoMakerValue != null) {
+                                                    infoMakerValue.style.display = "none";
+                                                }
+                                            } else {
+                                                var infoMakerValue = document.getElementById("89_infoMaker");
+                                                if (infoMakerValue != null) {
+                                                    infoMakerValue.style.display = "block";
+                                                }
+                                            }
+                                        } else {
+                                            var infoMakerValue = document.getElementById("89_infoMaker");
+                                            if (infoMakerValue != null) {
+                                                infoMakerValue.style.display = "block";
+                                            }
+                                        }
+                                    }
+                                    var startDate = "";
+                                    var endDate = "";
+                                    if (startDate != "") {
+                                        if (endDate != "") {
+                                            var newDate = new Date().Format("yyyy/MM/dd");
+                                            var newDateValue = Date.parse(newDate);
+                                            var endDate1 = endDate.replace(/-/g, "/");
+                                            var endDateValue = Date.parse(endDate1);
+                                            if (endDateValue - newDateValue < 0) {
+                                                var infoMakerValue = document.getElementById("74_infoMaker");
+                                                if (infoMakerValue != null) {
+                                                    infoMakerValue.style.display = "none";
+                                                }
+                                            } else {
+                                                var infoMakerValue = document.getElementById("74_infoMaker");
+                                                if (infoMakerValue != null) {
+                                                    infoMakerValue.style.display = "block";
+                                                }
+                                            }
+                                        } else {
+                                            var infoMakerValue = document.getElementById("74_infoMaker");
+                                            if (infoMakerValue != null) {
+                                                infoMakerValue.style.display = "block";
+                                            }
+                                        }
+                                    }
+                                }
+                            </script>
+                            <div id="FrontNews_list01-1419219737604"
+                                 class="FrontNews_list01-d3_c1_01">
+                                <ul class="comstyle newslist-01">
+                                    <li class="content column-num2">
+                                        <div class="pic">
+                                            <a href="http://mp.weixin.qq.com/s?__biz=MzAwNzcxMjg5NQ==&mid=308984184&idx=1&sn=da29030d948299dcbc72970059f124c7#rd"
+                                               title="走近大师---官瓷"
+                                               target="_self">
+                                                <img src="ypic/master1.png"
+                                                     alt="走近大师---官瓷"
+                                                     title="走近大师---官瓷"/></a>
+                                        </div>
+                                        <div class="newslist">
+                                            <ul>
+                                            </ul>
+                                        </div>
+                                        <div class="newstitle">
+                                            <ul>
+                                                <li class="title">
+                                                    <h3>
+                                                        <a href="http://mp.weixin.qq.com/s?__biz=MzAwNzcxMjg5NQ==&mid=308984184&idx=1&sn=da29030d948299dcbc72970059f124c7#rd"
+                                                           title="走近大师---官瓷"
+                                                           target="_self">
+                                                            走近大师---官瓷</a>
+                                                        </a>
+                                                    </h3>
+                                                </li>
+                                                <li class="date">
+                                                    <span>发布时间：</span>2016年4月16日
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="content column-num2">
+                                        <div class="pic">
+                                            <a href="http://mp.weixin.qq.com/s?__biz=MzAwNzcxMjg5NQ==&mid=308984187&idx=1&sn=08543a261658cf0387e6951cad9537d9#rd"
+                                               title="走近大师--三彩艺" target="_self">
+                                                <img src="ypic/master2.png"
+                                                     alt="走近大师--三彩艺"
+                                                     title="走近大师--三彩艺"/></a>
+                                        </div>
+                                        <div class="newslist">
+                                            <ul>
+                                            </ul>
+                                        </div>
+                                        <div class="newstitle">
+                                            <ul>
+                                                <li class="title">
+                                                    <h3>
+                                                        <a href="http://mp.weixin.qq.com/s?__biz=MzAwNzcxMjg5NQ==&mid=308984187&idx=1&sn=08543a261658cf0387e6951cad9537d9#rd"
+                                                           title="走近大师--三彩艺"
+                                                           target="_self">
+                                                            走近大师--三彩艺</a>
+                                                        </a>
+                                                    </h3>
+                                                </li>
+                                                <li class="date">
+                                                    <span>发布时间：</span>2016年1月2日
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="clearBoth"></li>
+                                    <li class="content column-num2">
+                                        <div class="pic">
+                                            <a href="http://mp.weixin.qq.com/s?__biz=MzAwNzcxMjg5NQ==&mid=308984190&idx=1&sn=09665f9ae1026b7320505bea77b8a988#rd"
+                                               title="走近大师--菊花瓷"
+                                               target="_self">
+                                                <img src="ypic/master3.png"
+                                                     alt="走近大师--菊花瓷"
+                                                     title="走近大师--菊花瓷"/></a>
+                                        </div>
+                                        <div class="newslist">
+                                            <ul>
+                                            </ul>
+                                        </div>
+                                        <div class="newstitle">
+                                            <ul>
+                                                <li class="title">
+                                                    <h3>
+                                                        <a href="http://mp.weixin.qq.com/s?__biz=MzAwNzcxMjg5NQ==&mid=308984190&idx=1&sn=09665f9ae1026b7320505bea77b8a988#rd"
+                                                           title="走近大师--菊花瓷"
+                                                           target="_self">
+                                                            走近大师--菊花瓷</a>
+                                                        </a>
+                                                    </h3>
+                                                </li>
+                                                <li class="date">
+                                                    <span>发布时间：</span>2015年12月12日
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="content column-num2">
+                                        <div class="pic">
+                                            <a href="http://mp.weixin.qq.com/s?__biz=MzAwNzcxMjg5NQ==&mid=308984193&idx=1&sn=9b184dc6a15702feec68722161b387f8#rd"
+                                               title="走近大师--彩陶"
+                                               target="_self">
+                                                <img src="ypic/master4.png"
+                                                     alt="走近大师--彩陶"
+                                                     title="走近大师--彩陶"/></a>
+                                        </div>
+                                        <div class="newslist">
+                                            <ul>
+                                            </ul>
+                                        </div>
+                                        <div class="newstitle">
+                                            <ul>
+                                                <li class="title">
+                                                    <h3>
+                                                        <a href="http://mp.weixin.qq.com/s?__biz=MzAwNzcxMjg5NQ==&mid=308984193&idx=1&sn=9b184dc6a15702feec68722161b387f8#rd"
+                                                           title="走近大师--彩陶"
+                                                           target="_self">
+                                                            走近大师--彩陶</a>
+                                                        </a>
+                                                    </h3>
+                                                </li>
+                                                <li class="date">
+                                                    <span>发布时间：</span>2015年5月22日
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="clearBoth"></li>
+                                </ul>
+                                <div class="pageJump">
+                                    <div class="pageJump">
+                                        <div class="number"><span
+                                                class="disabled">上一页</span><span
+                                                class="current">1</span><a
+                                                href="#"
+                                                onclick="return jump_bd7b6ce4b18d4e269f58a3f0701d83f9(2,4);">下一页</a>
+                                        </div>
+                                        <script language="javascript"
+                                                type="text/JavaScript">
+                                            //<![CDATA[
+                                            var locatonbd7b6ce4b18d4e269f58a3f0701d83f9 = window.location.href;
+                                            function scriptFunctionbd7b6ce4b18d4e269f58a3f0701d83f9() {
+                                                var hrefTemp = document.getElementById("hrefTempIdbd7b6ce4b18d4e269f58a3f0701d83f9").value;
+                                                var hrefPageNo = document.getElementById("pageNoIdbd7b6ce4b18d4e269f58a3f0701d83f9");
+                                                var hrefPageNoValue = hrefPageNo.value;
+                                                var pattern = /^\d+(\.\d+)?$/;
+                                                if (pattern.test(hrefPageNoValue) && hrefPageNoValue > 0 && hrefPageNoValue <= 6) {
+                                                    window.location.href = hrefTemp.replace("bd7b6ce4b18d4e269f58a3f0701d83f9", hrefPageNoValue);
+                                                } else {
+                                                    alert("页数输入不合法");
+                                                    hrefPageNo.focus();
+                                                }
+                                            }
+                                            function jumpbutton_bd7b6ce4b18d4e269f58a3f0701d83f9() {
+                                                var hrefPageNo = document.getElementById("pageNoIdbd7b6ce4b18d4e269f58a3f0701d83f9");
+                                                var hrefPageNoValue = hrefPageNo.value;
+                                                var pattern = /^\d+$/;
+                                                if (pattern.test(hrefPageNoValue) && hrefPageNoValue > 0 && hrefPageNoValue <= 6) {
+                                                    jump_bd7b6ce4b18d4e269f58a3f0701d83f9(hrefPageNoValue, 4)
+                                                } else {
+                                                    alert("页数输入不合法");
+                                                    hrefPageNo.focus();
+                                                }
+                                            }
+                                            function jump_bd7b6ce4b18d4e269f58a3f0701d83f9(page_no, page_size) {
+                                                var current_size = "FrontNews_list01-1419219737604_pageSize=4";
+                                                var current_no = "FrontNews_list01-1419219737604_pageNo=1";
+                                                var jumpLocation = locatonbd7b6ce4b18d4e269f58a3f0701d83f9;
+                                                if (locatonbd7b6ce4b18d4e269f58a3f0701d83f9.indexOf("=") == -1) {
+                                                    jumpLocation = jumpLocation.replace(".html", "/.html");
+                                                }
+                                                if (locatonbd7b6ce4b18d4e269f58a3f0701d83f9.indexOf(current_no) != -1) {
+                                                    jumpLocation = jumpLocation.replace(current_no, "FrontNews_list01-1419219737604_pageNo=" + page_no);
+                                                } else {
+                                                    jumpLocation = jumpLocation.replace(".html", "&FrontNews_list01-1419219737604_pageNo=" + page_no + ".html");
+                                                }
+                                                if (locatonbd7b6ce4b18d4e269f58a3f0701d83f9.indexOf(current_size) != -1) {
+                                                    jumpLocation = jumpLocation.replace(current_size, "FrontNews_list01-1419219737604_pageSize=" + page_size);
+                                                } else {
+                                                    jumpLocation = jumpLocation.replace(".html", "&FrontNews_list01-1419219737604_pageSize=" + page_size + ".html");
+                                                }
+                                                window.location.href = jumpLocation;
+                                                return false;
+                                            }
+                                            //]]>
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </DIV>
+                    </TD>
+                </TR>
+                </TBODY>
+            </TABLE>
+        </DIV>
+    </DIV>
+    <div class="footer">
+        <div class="foot_content">
+            <div class="foot_ma" id="box_foot_1"><a class="tooltips"
+                                                    href="#tooltips"> <img
+                    src="ypic/qrm.jpg" data-original="ypic/qrm.png"
+                    width="50" height="50"/> <span>
+        <div xmlns="" class="columnSpace"
+             id="elem-FrontSpecifies_show01-1415859867127" name="说明页">
+            <div id="FrontSpecifies_show01-1415859867127"
+                 class="FrontSpecifies_show01-d1_c1"><img
+                    data-original="ypic/qr.png" height="364"
+                    src="ypic/qr.png" width="275"/></div>
+        </div>
+        </span> </a></div>
+            <div class="foot_tel" id="box_foot_2">
+                <div xmlns="" class="columnSpace"
+                     id="elem-FrontSpecifies_show01-1415860099149" name="说明页">
+                    <div id="FrontSpecifies_show01-1415860099149"
+                         class="FrontSpecifies_show01-d1_c1"><img height="50"
+                                                                  src="ypic/mun.png"
+                                                                  width="199"/>
+                    </div>
+                </div>
+            </div>
+            <div class="foot_copyright" id="box_foot_3">
+                <div xmlns="" class="columnSpace"
+                     id="elem-FrontSpecifies_show01-1415860121529" name="说明页">
+                    <div id="FrontSpecifies_show01-1415860121529"
+                         class="FrontSpecifies_show01-d1_c1"><p>
+                        版权所有/醉中国&nbsp; 技术支持/<b>河南智心</b>
+                    </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--end footer-->
+    <DIV id="VideoZoom"></DIV>
+</DIV>
+<!--end pageWidth-->
+<DIV id="black_overlay"></DIV>
+<SCRIPT language="javascript" src="js/kunyi.common.js"
+        type="text/javascript"></SCRIPT>
+<SCRIPT language="javascript" src="js/kunyi.about.js"
+        type="text/javascript"></SCRIPT>
+<DIV class="Top"><A href="javascript:void(0)"> <IMG border="0"
+                                                    src="ypic/lanren_top.jpg"/>
+</A></DIV>
+
+</body>
+</HTML>

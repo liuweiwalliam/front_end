@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+    <style type="text/css">
+        div {
+            height:200px;
+            width:200px;
+            background-color: red;
+        }
+
+        @-webkit-keyframes mycolor {
+            0% {
+                background-color: red;
+            }
+            33% {
+                background-color: yellow;
+            }
+            66% {
+                background-color: green;
+            }
+            100%{
+                background-color: red;
+            }
+        }
+div:hover{ animation: mycolor 50s 1;}
+    </style>
+</head>
+<body>
+<div>
+    text word
+</div>
+</body>
+</html>

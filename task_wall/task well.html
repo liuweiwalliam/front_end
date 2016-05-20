@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task</title>
+    <link rel="stylesheet" href="cube.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<div class="top">schedule</div>
+<div class="dib-box">tasks
+    <div class="dib" id="creat">
+        <div><input type="button" class="button"
+                    value="创建任务" id="cr"/>
+            <!--button bug--></div>
+    </div>
+
+    <div class="dib" id="doing">
+        ON Working
+    </div>
+    <div class="dib" id="done">
+        Finish
+    </div>
+    <div class="dib" id="bug">
+        bug
+    </div>
+</div>
+<!--隐藏的-->
+<div style="display:none">
+    <div class="block" id="bl">
+        <textarea class="ta" style="font-size: 16px;"></textarea>
+        <p></p>
+        <input type="button" class="lb" value="上一步" id="pre"><input
+            type="button" class="rb" value="下一步" id="next">
+    </div>
+    <input type="button" value="to bug" class="bu" id="bu">
+</div>
+
+
+<script src="jquery-2.2.3.min.js"></script>
+<script src="function.js"></script>
+<script type="text/javascript">
+    var wh = window.innerHeight;
+    var ww = window.innerWidth;
+    w = ww - 200;
+    $("#cr").click(ne);
+    $(document).on("click", ".rb", function () {
+        var f = $(this).parent().parent().attr("id");
+        if (f == "creat") {
+            $(this).parent().appendTo($("#doing"));
+            if ($(this).parent().find("input").length == 2) {
+                $(this).parent().append($(".bu:last").clone())
+            }
+            ;
+        }
+        else if (f == "doing") {
+            $(this).parent().appendTo($("#done"));
+        }
+        else if (f == "bug") {
+            $(this).parent().appendTo($("#doing"));
+        }
+    });
+
+    $(document).on("click", ".lb", function () {
+        var f = $(this).parent().parent().attr("id");
+        if (f == "done") {
+            $(this).parent().appendTo($("#doing"));
+        }
+        else if (f == "doing") {
+            $(this).parent().appendTo($("#creat"));
+        }
+    });
+    $(document).on("click", ".bu", function () {
+        $(this).parent().appendTo($("#bug"));
+    });
+</script>
+
+</body>
+</html>

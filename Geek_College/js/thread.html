@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        div {
+            height:100px;
+            width :100px;
+            cursor:pointer;
+            background-color:orange;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>jsmultytread</title>
+
+</head>
+<body>
+<script type="text/javascript"
+        src="Concurrent.Thread.js">
+</script>
+<script
+        type="text/javascript"
+        src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js">
+</script>
+<div id="test">
+    test click
+</div>
+          <!--<script type="text/javascript">-->
+<!--//           $('#test').click(function(arguments){-->
+<!--//               alert(1);}-->
+<!--//                    )-->
+<!--//              alert($)-->
+<!--//              for(var i=0;i<100000000;i++){-->
+<!--//                  console.log(i);-->
+<!--//              };-->
+              <!--Concurrent.Thread.create(function(){-->
+                  <!--$('#test').click(function(arguments){-->
+               <!--alert(1);                                 }-->
+                                    <!--)-->
+<!--//              alert($)-->
+              <!--for(var i=0;i<100000000;i++){-->
+                  <!--console.log(i);         }-->
+                                                   <!--}-->
+                                       <!--)-->
+          <!--</script>-->
+<script type="text/javascript">
+    var worker=new Worker("task");
+    worker.onmessage=function(ever){
+        oBox.innerHTML=event.date;
+        alert.(event.date);
+        Woker.postMassage(100000);
+    }
+</script>
+
+</body>
+</html>

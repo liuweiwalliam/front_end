@@ -1,0 +1,18 @@
+*{
+    margin:20px;
+    padding:20px;
+
+}
+.test{
+    width:300px;
+    height:300px;
+    margin:10px;
+    background-color:yellowgreen;
+    /*display:none;*/
+}
+P{
+    width:100px;
+    height:100px;
+    background-color:blue;
+    cursor:pointer;
+}

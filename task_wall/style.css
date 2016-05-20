@@ -1,0 +1,60 @@
+.top {
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    font-size: 80px;
+}
+
+.dib-box {
+    text-align: center;
+}
+
+.dib {
+    height: 800px;
+    width: 22%;
+    background-color: yellow;
+    border: green solid 5px;
+    text-align: center;
+    color: blue;
+}
+
+.button {
+    height: 40px;
+    width: 100px;
+}
+
+.block {
+    background-color: gray;
+    height: 150px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.ta {
+    margin: auto;
+    width: 90%;
+    height: 70%;
+}
+
+.lb {
+    float: left;
+    height: 18px;
+    width: 35%;
+    margin-left: 10%;
+}
+
+.rb {
+    float: right;
+    height: 18px;
+    width: 35%;
+    margin-right: 7.5%;
+}
+
+.bu {
+    float: left;
+    height: 18px;
+    width: 35%;
+    margin-left: 10%;
+}

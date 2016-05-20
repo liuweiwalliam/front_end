@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手写ajax</title>
+</head>
+<body>
+<input type="button" id="btn1" value="read">
+<!--创建ajax对象-->
+<script type="text/javascript">
+    window.onload = function () {
+        var btn = document.getElementById("btn1");
+        btn.onclick = function () {
+//            if (window.XMLHttpRequest)
+//                var ajax = new XMLHttpRequest();
+            if (window.XMLHttpRequest) { //该对象存在不是ie6，为undefined时为false,进入else.
+                var oajax = new XMLHttpRequest();
+
+            }
+            else {
+                var oajax = new ActiveXObject("Microsoft.XMLHttp");
+            }
+            //连接服务器
+            oajax.open("get", "a.txt?t="+ new Date().getTime(), "true");
+            //发送请求
+            oajax.send();
+            //接收返回
+            oajax.onreadystatechange = function () {
+                //  oajax.readyState;  获取状态，告诉浏览器进行到哪一步了；
+                if (oajax.readyState == 4) //读取完成，但不一定成功，比如文件不存在或出错了也会出现4.
+                {
+                    if (oajax.status == 200) {
+                        console.log("success"+oajax.responseText);
+                    }
+                    else {
+                        alert("failure");
+                    }
+                }//进行到哪一步了
+            }
+        }
+    }
+</script>
+</body>
+</html>

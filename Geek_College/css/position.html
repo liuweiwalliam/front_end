@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> learning position</title>
+    <style type="text/css">
+        .rel{
+            /*word-break:break-all;*/
+            background-color:blueviolet;
+            display:inline-block;
+            position:relative;
+             left:100px;
+            top:100px}
+        .abs{
+            /*word-break:break-all;*/
+            background-color:aquamarine;
+            display:inline-block;
+            position:absolute;
+            /*float:left;*/
+            }
+        .abs1{
+               height:280px;
+               width:280px;
+               background-color:gray;
+            display:inline-block;
+            float:left;
+
+        }
+      .outer{
+            height:300px;
+            width:300px;
+            background-color:chocolate;
+            display:inline-block;
+            float:left;
+            position:relative;
+        }
+      .fix{
+          position:fixed;
+          height:40px;
+          width:40px;
+          background-color:orange;
+          float:left;
+          top:10px;
+          right:0px;
+      }
+div{
+    height:200px;
+    width:200px;
+}
+    </style>
+</head>
+<body>
+<br/><br/><br/><br/><br/><br/>
+<div class="fix">stable stable stable stable stable stable stable stable</div>
+<div class="outer">
+    <div class="rel">111111111111111111111111111111111111111111</div>
+     <div class="abs1">33333333333333333333333333333333333333333</div>
+    <div class="abs">2222222222222222222222222222222222222222222</div>
+</div>
+</body>
+</html>

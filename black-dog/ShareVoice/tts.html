@@ -1,0 +1,275 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
+<html lang="en">
+
+<head>
+<title>好友分享-听她说</title>
+<meta
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+	name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link rel="shortcut icon" href="ic_launcher.ico">
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html:root {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+body {
+	background: #DCDCDC;
+}
+
+header {
+	height: 3rem;
+	background-color: #F14D56;
+	overflow: hidden;
+	position: relative;
+}
+
+header img {
+	height: 1.5rem;
+	display: block;
+	margin: .75rem 0 .75rem .5rem;
+}
+
+header a {
+	position: absolute;
+	right: .5rem;
+	top: .5rem;
+}
+
+header i.download {
+	background: url("download.png") no-repeat center/1.75rem auto;
+	display: block;
+	width: 2rem;
+	height: 2rem;
+}
+
+.wave {
+	background: #F1EFF0;
+	padding: .8rem;
+	margin: 1rem;
+}
+
+.user {
+	
+}
+
+.user img {
+	height: 3rem;
+	border-radius: 50%;
+}
+
+.user .info {
+	display: inline-block;
+	line-height: 1.5;
+	vertical-align: top;
+	margin-left: .2rem;
+}
+
+.user .info time {
+	color: #C8C8C8;
+	font-size: .9rem;
+}
+
+.wavebody p {
+	margin: .5rem 0;
+}
+
+.wavebody .player {
+	background: #fff;
+	padding: 0.5rem;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.wavebody .player .waveback {
+	position: relative;
+}
+
+.wavebody .player .waveback img {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 3px;
+}
+
+.wavebody .player .waveback .play {
+	background: url("play.png") no-repeat center/1.5rem auto
+		rgba(0, 0, 0, 0.5);
+	width: 3rem;
+	height: 3rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.wavebody .player .waveback .pause {
+	background: url("pause.png") no-repeat center/1.5rem auto
+		rgba(0, 0, 0, 0.5);
+	width: 3rem;
+	height: 3rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+.wavebody .player .progress {
+	-webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+	padding-left: .5rem;
+}
+
+.wavebody .player .progress .progressbar {
+	background: #F1EFF0;
+	height: .5rem;
+	border-radius: .25rem;
+	width: 90%;
+	position: relative;
+	margin-top: 1rem;
+}
+
+.wavebody .player .progress .progressbar .played {
+	background: #F25252;
+	height: .5rem;
+	border-radius: .25rem;
+	width: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.wavebody .player .progress .progressbar .played::after {
+	content: '';
+	display: block;
+	height: .8rem;
+	width: .8rem;
+	background: #F25252;
+	border-radius: 50%;
+	position: absolute;
+	right: -.6rem;
+	top: -.1rem;
+}
+
+.wavebody .player .progress p {
+	color: #c8c8c8;
+}
+
+.android {
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.android a {
+	text-decoration: none;
+	color: inherit;
+	line-height: 2rem;
+	outline: none;
+}
+
+.android a img {
+	height: 5rem;
+}
+</style>
+</head>
+
+<body>
+	<header>
+		<img src="name.png" alt=""> <a
+			href="http://123.56.139.201/api/softinfo/download"><i
+			class="download"></i></a>
+	</header>
+	<div class="wave">
+		<div class="user">
+			<img src="${avatar }" alt="">
+			<div class="info">
+				<p>${username }</p>
+				<time>${date }</time>
+			</div>
+		</div>
+		<div class="wavebody">
+			<p>${signature }</p>
+			<div class="player">
+				<div class="waveback">
+					<img src="${avatar }" alt="">
+					<div class="play"></div>
+					<div class="pause"></div>
+				</div>
+				<div class="progress">
+					<div class="progressbar">
+						<div class="played"></div>
+					</div>
+					<p>
+						<span class="curr">--:--</span>/<span class="total">--:--</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<audio src="${voice }">
+		</audio>
+	</div>
+	<div class="android">
+		<a href="http://123.56.139.201/api/softinfo/download"> <img
+			src="ShareVoice/android.png" alt="">
+			<p>Android版下载</p>
+		</a>
+	</div>
+</body>
+<script type="text/javascript" src="ShareVoice/zepto.min.js"></script>
+<script type="text/javascript">
+$(function () {
+        var interval;
+
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        var eventtype = IsPC() ? "click" : "tap";
+        $(".play").on(eventtype,(function () {
+            $("audio").get(0).play();
+            $(".total").text(strtotime($("audio").get(0).duration));
+            $(".curr").text(strtotime($("audio").get(0).currentTime));
+            interval = setInterval(function () {
+                $(".curr").text(strtotime($("audio").get(0).currentTime));
+                $(".progressbar .played").css("width", $("audio").get(0).currentTime / $("audio").get(0).duration * 100 + "%");
+            }, 1000);
+            $(".play").hide();
+            $(".pause").show();
+        }));
+
+        $(".pause").on(eventtype,(function () {
+            $(".play").show();
+            $("audio").get(0).pause();
+            clearInterval(interval)
+            $(".pause").hide();
+        }));
+
+        function strtotime(time) {
+            time = parseInt(time);
+            return parseInt(time / 60) + ':' + (time % 60 >= 10 ? time % 60 : 0 + '' + time % 60);
+        }
+    });
+</script>
+</html>

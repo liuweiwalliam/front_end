@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>magic cube</title>
+    <style type="text/css">
+        .cube div{
+            position:absolute;
+            height:200px;
+            width:200px;
+            border:1px solid black;
+            background:#FFCC33;
+            text-align:center;
+            font-size:180px;
+        }
+        .cube{
+            -webkit-animation-name:animation;
+            -webkit-animation-timing-function:ease-in-out;
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-duration:3s;
+            margin:80px;
+            -webkit-perspective:138px;
+            -webkit-transform-style:preserve-3d;
+            -webkit-transform-origin:200px 200px 100px;
+        }
+        /*指定旋转位置基准点，因为每次转过之后基准点都会改变，所知指定，相当于把（100,100,0）拉到（0，0，0）*/
+            /*-webkit-perspective-origin:-25% -40px;*/
+        .a {
+            -webkit-transform:translateZ(100px) ;
+        }
+        .b{ -webkit-transform:rotateX(-90deg) translateZ(100px);
+        }
+        .c{ -webkit-transform:rotateY(90deg) rotateX(90deg) translateZ(100px);
+
+        }
+        .d{
+            -webkit-transform:rotateY(180deg) translateZ(100px);
+        }
+        .e{
+            -webkit-transform:rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+        }
+        .f{
+            -webkit-transform:rotateX(-180deg) translateZ(100px);
+        }
+        @-webkit-keyframes animation {
+            from,to {
+            }
+            16% {
+                -webkit-transform: rotateY(-90deg);
+            }
+            33% {
+                -webkit-transform: rotateY(-90deg) rotateZ(135deg);
+            }
+            50% {
+                -webkit-transform: rotateY(225deg) rotateZ(135deg);
+            }
+            66% {
+                -webkit-transform: rotateY(-90deg) rotateX(135deg);
+            }
+            83% {
+                -webkit-transform: rotateX(135deg);
+            }
+        }
+
+    </style>
+         <script type="text/javascript">
+             function init()
+             {
+                 document.addEventListenter("touchstart",function(event){event.preventDefaut();},false);
+             }
+             window.onLoad=init()
+         </script>
+</head>
+<body>
+<h2 align=center>css basic</h2>
+<div class="view" style="width:200px;height:200px;
+margin:80px auto auto 0;">
+
+    <div class="cube">
+        <div class="a">1</div>
+        <div class="b">2</div>
+        <div class="c">3</div>
+        <div class="d">4</div>
+        <div class="e">5</div>
+        <div class="f">6</div>
+    </div>
+</div>
+</body>
+</html>

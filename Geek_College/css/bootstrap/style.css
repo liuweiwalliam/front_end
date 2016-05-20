@@ -1,0 +1,15 @@
+.row{
+    margin-bottom:20px;
+}
+.row.row{
+    magin-top:10px;
+    margin-bottom:0px;
+}
+[class*='col_']{
+    padding-top:15px;
+    padding-bottom:15px;
+    background-color:#eee ;
+    background-color: rgba(86,61,124,.15);
+    border:1px solid #dddddd;
+    border:1px solid  rgba(2,5,6,.8);
+}
