@@ -12,8 +12,8 @@
 .dib {
     height: 800px;
     width: 22%;
-    background-color: yellow;
-    border: green solid 5px;
+    background-color:papayawhip;
+    border: #ebebeb solid 5px;
     text-align: center;
     color: blue;
 }
@@ -25,7 +25,7 @@
 
 .block {
     background-color: gray;
-    height: 150px;
+    height: 90px;
     width: 80%;
     text-align: center;
     margin: auto;
@@ -34,27 +34,34 @@
 
 .ta {
     margin: auto;
+    margin-top:1px;
     width: 90%;
-    height: 70%;
+    height: 65%;
 }
 
 .lb {
     float: left;
     height: 18px;
-    width: 35%;
-    margin-left: 10%;
+    width: 20%;
+    margin-left:5px;
 }
 
 .rb {
     float: right;
     height: 18px;
-    width: 35%;
-    margin-right: 7.5%;
+    width: 20%;
+    margin-right: 5px;
 }
 
 .bu {
     float: left;
     height: 18px;
-    width: 35%;
-    margin-left: 10%;
+    width: 20%;
+    margin-left: 5px;
 }
+.fi {
+     float: left;
+     height: 18px;
+     width: 20%;
+     margin-left: 5px;
+ }

@@ -1,0 +1,95 @@
+hanoi.html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-2.2.3.js"></script>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    //集合实现
+    function Set() {
+        var items = {};
+        this.has = function (key) {
+            return key in items;
+        };
+        this.add = function (value) {
+            if (items.hasOwnProperty(value)) {
+                return false;
+            } else {
+                items[value] = value;
+                return true;
+            }
+        };
+        this.set = function () {
+            return items;
+        };
+        this.remove = function (key) {
+            delete items[key];
+        };
+        this.union = function (obj) {//并集
+            var keys = Object.keys(obj);
+            var _items_c = items;
+            keys.forEach(function (e) {
+                if (items[e]) {
+                    return;
+                } else {
+                    _items_c[e] = e;
+                }
+            });
+            return _items_c;
+        };
+        this.difference = function (obj) {
+            var keys = Object.keys(obj);
+            var _items_c = {};
+            keys.forEach(function (e) {
+                console.log(items[e]);
+                if (items[e]) {
+                    _items_c[e] = e;
+                } else {
+                    return;
+                }
+            });
+            return _items_c;
+        };
+    }
+    ;
+    var set1 = new Set();
+    var set2 = new Set();
+    set1.add('a');
+    set1.add('b');
+    set2.add('c');
+    set2.add('b');
+    console.log(set2.union(set1.set()));
+
+    //map实现
+    //    function Map() {
+    //        var item = {};
+    //        this.add = function (key, val) {
+    //            if (item.hasOwnProperty(key)) {
+    //                return false;
+    //            } else {
+    //                item[key] = val;
+    //            }
+    //        };
+    //        this.keys = function () {
+    //          return Object.keys(item);
+    //        };
+    //        this.show = function () {
+    //            return item;
+    //        }
+    //    };
+    //var map = new Map();
+    //    map.add("a",1);
+    //    map.add('b',2);
+    //    console.log(map.keys());
+    //    console.log(map.show());
+
+    //    交并补实现
+    var obj1 = {1: 1, 2: 2, 3: 3};
+    var obj2 = {4: 4, 5: 5, 3: 3};
+
+
+</script>
+</body>
+</html>

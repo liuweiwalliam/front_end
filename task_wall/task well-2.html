@@ -46,6 +46,9 @@ ON Working
     var wh = window.innerHeight;
     var ww = window.innerWidth;
     w = ww - 200;
+    function ne(){
+        $("#creat").append($(".block:last").clone());
+    }
     $("#cr").click(ne);
     $(document).on("click", ".rb", function () {
         var f = $(this).parent().parent().attr("id");

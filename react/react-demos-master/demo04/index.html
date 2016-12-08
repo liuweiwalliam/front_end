@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var HelloMessage = React.createClass({//创建渲染的类的函数
+        render: function() {               //render属性下挂载一个函数
+          return <h1>Hello {this.props.age} {this.props.name}</h1>;
+        }
+      });
+
+      ReactDOM.render(
+        <HelloMessage name="John"  age="12"/>, //类下的属性为this.props.name
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

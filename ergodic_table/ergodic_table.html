@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历数组</title>
+    <script src="../ztest/jquery-2.2.3.js"></script>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>a</th>
+        <th>b</th>
+        <th>c</th>
+        <th>d</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<button id="get">获取数据</button>
+<script type="text/javascript">
+$("#get").click(
+        function(){
+            $.ajax({
+                type:"get",
+                url:"test.json",
+                dataType:"json",
+                success:function(data){
+                    var l=data.man.length;
+                   var rows_num=$("table tr").length;
+                   if(rows_num>l){
+                       console.log("finish");
+                   }
+                    else{
+                       //                    console.log(data.man[0].a);
+//                    console.log("get")
+//                    for(var i=0;i <= l-1;i++){
+//                        console.log(i);
+//                    var tr="<tr><td>"+data.man[i].a+"</td><td>"+data.man[i].b+"</td><td>"+data.man[i].c+"</td><td>"+data.man[i].d+"</td></tr>";
+//                        $("table").append(tr);
+//                    }
+                       var i=0;
+                       while(i <= l-1){
+                           var tr="<tr><td>"+data.man[i].a+"</td><td>"+data.man[i].b+"</td><td>"+data.man[i].c+"</td><td>"+data.man[i].d+"</td></tr>";
+                           $("table").append(tr);
+                           i++;
+                       }
+                   }
+
+
+                },
+                error:function(){
+                    console.log("fail");
+                }
+
+            })
+
+        }
+)
+//var a=$(data).length;
+//    console.log(a);
+</script>
+</body>
+</html>

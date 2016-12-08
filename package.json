@@ -1,0 +1,24 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "no info",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "react": "^15.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuweiwalliam/front_end.git"
+  },
+  "author": "walliam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liuweiwalliam/front_end/issues"
+  },
+  "homepage": "https://github.com/liuweiwalliam/front_end#readme"
+}

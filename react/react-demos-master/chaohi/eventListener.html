@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <script src="../../"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var TestClick = React.createClass({
+        render: function () {
+            return (
+                    <div>
+                        <button>show|hide</button>
+                        <span>点击测试</span>
+                    </div>
+            )}
+    });
+    var TestinputComponent = React.createClass({
+        getInitialState: function () {
+            return {inputContent: ""};
+        },
+        render: function () {
+            return (
+                    <div>
+                        <input type="text"/> < span >{this.state.inputContent}</span>
+                    </div>
+            )
+        },
+    });
+    React.render(
+            <div><TestClick/>
+                <TestinputComponent/>
+            </div>,
+            document.getElementById("example")
+    );
+</script>
+</body>
+</html>

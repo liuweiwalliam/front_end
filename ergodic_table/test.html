@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>无标题文档</title>
+    <script src="../ztest/jquery-2.2.3.js"></script>
+    <script type="text/javascript" language="javascript">
+        function init()
+        {
+            var table =document.getElementById("tab");
+            var rows = table.rows.length;
+//            alert('行数'+rows);
+            var colums = table.rows[0].cells.length;
+//            var colums = table.colums.length;
+//            console.log('列数'+colums);
+    var rn= $("#tab tr").length;
+            console.log("行数"+rn);
+            var cn=($("#tab td").length+$("#tab th").length)/$("#tab tr").length;
+//            var cn=$("#tab td").length+$("#tab th").length;
+            console.log(cn);
+        }
+    </script>
+</head>
+
+<body onload="init()">
+<table width="80%" border="1" id="tab">
+    <tr>
+        <th>1</th>
+        <th>2;</th>
+        <th>3;</th>
+        <th>4;</th>
+    </tr>
+    <tr>
+        <td>22;</td>
+        <td>21;</td>
+        <td>34;</td>
+        <td>12;</td>
+    </tr>
+    <tr>
+        <td>12;</td>
+        <td>21;</td>
+        <td>45;</td>
+        <td>65;</td>
+    </tr>
+</table>
+
+</body>
+</html>
+

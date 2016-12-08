@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //汉诺塔，第n+1次为n的2倍+1次，挪过去，最大的挪一次，在挪到最大的上
+    function hanoi(n) {
+        var b = 1;
+        if(n == 1){
+            return 1;
+        }else{
+            for (var i = 2; i < n + 1; i++) {
+                b = 2*b+1;
+            }
+            return b;
+        }
+
+    };
+   console.log( hanoi(64));
+</script>
+</body>
+</html>

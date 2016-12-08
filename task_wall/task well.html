@@ -33,28 +33,51 @@
     <div class="block" id="bl">
         <textarea class="ta" style="font-size: 16px;"></textarea>
         <p></p>
-        <input type="button" class="lb" value="上一步" id="pre"><input
-            type="button" class="rb" value="下一步" id="next">
+        <input type="button" class="lb" value="上一步">
+        <input type="button" class="rb" value="下一步">
+        <input type="button" value="to bug" class="bu">
+        <input type="button" class="fi" value="finish">
     </div>
-    <input type="button" value="to bug" class="bu" id="bu">
+
+
 </div>
 
 
 <script src="jquery-2.2.3.min.js"></script>
-<script src="function.js"></script>
 <script type="text/javascript">
+    i=null;
+    localStorage.data=null;
     var wh = window.innerHeight;
     var ww = window.innerWidth;
     w = ww - 200;
+    if(localStorage.data!=null){
+        dataObj=JSON.parse(localStorage.data);
+        var i=dataObj.record.i;
+//        console.log(dataObj.record.i);
+        if(dataObj.record.i!=null){}
+        else{i=0}
+    }else{
+        var i = 0;
+    }
+    var j = 0;
+    var k = 0;
+    //创建新元素
+    function ne() {
+        function creatNewBlock() {
+            var newblock = $(".block:last").clone();
+            newblock.attr('id', i);
+            i=i+1;
+            $("#creat").append(newblock);
+        }
+
+        creatNewBlock();
+    }
     $("#cr").click(ne);
+    //点击右键功能
     $(document).on("click", ".rb", function () {
         var f = $(this).parent().parent().attr("id");
         if (f == "creat") {
             $(this).parent().appendTo($("#doing"));
-            if ($(this).parent().find("input").length == 2) {
-                $(this).parent().append($(".bu:last").clone())
-            }
-            ;
         }
         else if (f == "doing") {
             $(this).parent().appendTo($("#done"));
@@ -63,7 +86,7 @@
             $(this).parent().appendTo($("#doing"));
         }
     });
-
+    //点击就左键功能
     $(document).on("click", ".lb", function () {
         var f = $(this).parent().parent().attr("id");
         if (f == "done") {
@@ -73,9 +96,64 @@
             $(this).parent().appendTo($("#creat"));
         }
     });
+    //点击bug键功能
     $(document).on("click", ".bu", function () {
         $(this).parent().appendTo($("#bug"));
     });
+    //点击结束键功能
+    $(document).on("click", ".fi", function () {
+        $(this).parent().css('display', 'none');
+    });
+    //存储功能
+    var data = {record: []};   //id, value, status,
+    $(document).on("blur", ".ta",
+            function () {
+                var info = $(this).val();
+                var key = $(this).parent().attr('id');
+                var status = $(this).parent().parent().attr('id');
+               console.log(key);
+                data.record[key] = {};
+                data.record[key].info = info;
+                data.record[key].key = key;
+                data.record[key].status = status;
+                data.record.i=i;
+//                data={record:[1,2,3]}
+                var dataStr=JSON.stringify(data);
+                localStorage.data=dataStr;
+                console.log(dataStr);
+                console.log(localStorage.data);
+//                console.log(data);
+//                console.log(localStorage.data.record.length);
+            });
+    $(function () {
+        if (localStorage.data) {
+//            console.log(localStorage.data);
+            dataObj=JSON.parse(localStorage.data);
+//            console.log(dataObj);
+//            console.log(dataObj.record);
+            if (dataObj.record.length == 0) {
+//    console.log(dataObj.record.length);
+            } else {
+
+                for (k = 0; k <= dataObj.record.length - 1; k++) {
+                    var newblock1 = $(".block:last").clone(true,true);
+                    $(newblock1).attr('id', dataObj.record[k].key);
+                    console.log(dataObj.record[k].info);
+                    $(newblock1).find('textarea').val(dataObj.record[k].info);
+                    if (dataObj.record[k].status == "creat") {
+                        $("#creat").append(newblock1);
+                    } else if (dataObj.record[k].status == "doing") {
+                        $("#doing").append(newblock1);
+                    } else if (dataObj.record[k].status == "done") {
+                        $("#done").append(newblock1);
+                    } else if (dataObj.record[k].status == "bug") {
+                        $("#bug").append(newblock1);
+                    }
+                }
+            }
+        }
+
+    })
 </script>
 
 </body>

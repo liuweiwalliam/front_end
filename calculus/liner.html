@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>链表</title>
+</head>
+<body>
+<script>
+    //单向链表的实现(一维数组包裹二维数组，一位内容，一位指针)
+    var liner = {};
+    liner.init = function () {
+        var arr = [];
+        for (var i = 0; i <= 5; i++) {
+            arr.push([i + 1, "container"])
+        }
+        arr[arr.length-1][0] = 0;//加上词句为循环链表
+        return arr;
+    };
+    liner.add = function (obj, position, container) { //放在第position位置，position位置元素后移
+        obj.forEach(function (e, p) {
+            if (obj[p][0] == position) {
+                obj[p][0] = obj.length;
+                obj.push([p+1,container]);
+            }else{};
+        })
+    };
+    liner.dec = function (possition) {
+        obj.forEach(function (e, p) {
+            if (obj[p][0] == position) {
+                obj[p][0] = obj[possition][0];
+            }else{};
+        })
+    };
+    var result = liner.init();
+    liner.add(result,4,'test');
+    console.log(result);
+</script>
+</body>
+</html>

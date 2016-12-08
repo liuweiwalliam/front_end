@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>audio</title>
+    <style type="text/css">
+        .bar {
+            height: 5px;
+
+        }
+
+        .point {
+            height: 3px;
+            position: relative;
+            top: -6px;
+        }
+    </style>audio_play.html
+</head>
+<body>
+<audio src="k.mp3" id="audio" controls="controls"></audio>
+<button id="play" class="play">play</button>
+<button id="plus" class="play">plus</button>
+<button id="minus" class="play">minus</button>
+<div class="container">
+    <div class="bar"><img src="bar.png"></div>
+    <div class="point"><img src="point.png"></div>
+    <p></p>
+    <div><b class="current">00</b>/<b class="total">00</b></div>
+</div>
+<script src="jquery-2.2.3.js"></script>
+<script type="text/javascript">
+    var $a = $("#audio");
+    var a = $a[0];
+    var b = 1;
+    $("#play").click(function () {
+        b = b + 1;
+        if (b % 2 == 0) {
+            a.play();
+            var p = document.getElementById("play");
+            p.innerHTML = "p l a y";
+            window.setInterval("process()",10);
+        }
+        else {
+            a.pause();
+            var p = document.getElementById("play");
+            p.innerHTML = "paused";
+        }
+    })
+    var volume = a.volume;
+    $("#plus").click(function () {
+        if (volume >= 1) {
+            a.volume = volume;
+        }
+        else {
+            volume = volume + 0.1;
+            a.volume = volume
+        }
+        console.log(volume);
+    })
+
+    $("#minus").click(function () {
+        if (volume <= 0) {
+            a.volume = volume;
+        }
+        else {
+            volume = volume - 0.1;
+            a.volume = volume;
+        }
+        console.log(volume);
+    })
+function process(){
+    var totaltime = a.duration;
+    var current = a.currentTime;
+    totaltime=totaltime.toFixed(2);
+    current=current.toFixed(2);
+    $(".current").text(current);
+    $(".total").text(totaltime);
+    var n;
+    n=current/totaltime*200;
+    $(".point").css("left",n);
+
+}
+</script>
+</body>
+</html>

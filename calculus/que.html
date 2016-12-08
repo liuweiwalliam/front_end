@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //删除数组第一个元素
+    //function popst(arr) {
+    //  var len = arr.length;
+    //    for(var i=0;i<len-1;i++ ){
+    //        arr[i] = arr[i+1];
+    //    }
+    //    arr.pop();
+    //    return arr;
+    //};
+    //var b = [1,2,3];
+    ////popst(b)
+    //console.log(popst(b));
+    //遍历对象
+    var post = {};
+    post.a = 1;
+    post.b = 2;
+    post.c = 3;
+    var d =[];
+    for (value in post) {
+        d.push(value);
+    };
+    d.forEach(function (item) {
+//        var key = item.toString();
+        console.log(post[item]);
+    })
+    console.log(post.a);
+
+</script>
+</body>
+</html>
