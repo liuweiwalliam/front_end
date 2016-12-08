@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "walliam",
   "version": "1.0.0",
   "description": "no info",
   "main": "index.js",
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/liuweiwalliam/front_end/issues"
   },
-  "homepage": "https://github.com/liuweiwalliam/front_end#readme"
+  "homepage": "https://github.com/liuweiwalliam/front_end#readme",
+  "keywords": [
+    "first"
+  ]
 }
