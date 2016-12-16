@@ -1,0 +1,23 @@
+<ul id="list">
+    <li id="li-1">Li 1</li>
+    <li id="li-2">Li 2</li>
+    <li id="li-3">Li 3</li>
+    <li id="li-4">Li 4</li>
+    <li id="li-5">Li 5</li>
+</ul>
+<script src="jquery-2.2.3.js"></script>
+<script>
+    var a = document.getElementsByTagName("li");
+    console.log(typeof a[1]);
+    console.log(a instanceof Array);
+    for (var i = 0; i < 5; i++) {
+        a[i].addEventListener("click", function () {
+            console.log(this.id);
+            console.log(a[i].id);
+            console.log(123);
+            for(prop in this){
+                console.log(prop);
+            }
+        })
+    }
+</script>
