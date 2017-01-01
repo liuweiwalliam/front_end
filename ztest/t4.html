@@ -1,23 +1,19 @@
-<ul id="list">
-    <li id="li-1">Li 1</li>
-    <li id="li-2">Li 2</li>
-    <li id="li-3">Li 3</li>
-    <li id="li-4">Li 4</li>
-    <li id="li-5">Li 5</li>
-</ul>
-<script src="jquery-2.2.3.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div style="height:300px;width:300px;background-color: red;" id="test">
+
+</div>
 <script>
-    var a = document.getElementsByTagName("li");
-    console.log(typeof a[1]);
-    console.log(a instanceof Array);
-    for (var i = 0; i < 5; i++) {
-        a[i].addEventListener("click", function () {
-            console.log(this.id);
-            console.log(a[i].id);
-            console.log(123);
-            for(prop in this){
-                console.log(prop);
-            }
-        })
-    }
+    document.querySelector("#test").style.width = '600px';
+    document.querySelector("#test").style.height = '600px';
 </script>
+</body>
+</html>
