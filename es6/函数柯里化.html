@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*纯函数的定义是，对于相同的输入，永远会得到相同的输出，而且没有任何可观察的副作用，也不依赖外部环境的状态。*/
+    /*函数柯里化，传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数*/
+    var add = function (x, y) {
+        return function (y) {
+           return x + y;
+        }
+    };
+    var add2 = add(2,200);
+    console.log(add2(200));
+</script>
+</body>
+</html>

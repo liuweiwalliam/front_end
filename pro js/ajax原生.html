@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../ztest/jquery-2.2.3.js"></script>
+<script>
+    var ajax = new XMLHttpRequest();
+    ajax.open("get", "testjson.json", true);
+    ajax.send();
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4) {
+            if (ajax.status == 200) {
+//                console.log(ajax.responseText);
+//                var data = eval('('+ajax.responseText+')');
+                var text = ajax.responseText;
+                var data2 = JSON.parse(text);
+                console.log(data2);
+
+            }
+        }
+    };
+    //    var promise = new Promise(
+    //            function (resolve, reject) {
+    //
+    //            });
+</script>
+</body>
+</html>
