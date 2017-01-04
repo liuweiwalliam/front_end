@@ -1,11 +1,12 @@
 /**
  * Created by walliam on 2016/12/7.
  */
-console.log(123);
-function name() {
-    if (a == 0) {
-        console.log(13);
-    } else if (a == 2) {
-        console.log(23);
+require.config({
+    paths: {
+        'jq':"../lib/js/jquery-2.2.3",
+        'main': "../lib/js/main"
     }
-};
+});
+require(['jq', 'main'], function (jq ,main) {
+console.log(main.add(1,2));
+})

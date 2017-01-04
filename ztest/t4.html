@@ -8,18 +8,36 @@
 </head>
 <body>
 <script>
-//for(var a in window){
-//    console.log(a);
-//};
-caches.keys("a");
-console.log(caches.has());
-</script>
-<div style="height:300px;width:300px;background-color: red;" id="test">
+//    var obj = {age: 3};
+//    //该函数定义对象的属性的属性
+//    Object.defineProperty(obj, 'age', {
+//        set: function () {
+//            console.log(1)
+//        },
+//        get: function () {
+//            console.log(arguments);
+//            console.log(2)
+//        },
+//        configurable: true,
+//        value:"123"
+//    });
+//    obj.age = 13;
+//    console.log(obj.age);
 
-</div>
-<script>
-    document.querySelector("#test").style.width = '600px';
-    document.querySelector("#test").style.height = '600px';
+var air = {};
+air.temperature = 15;
+Object.defineProperty(air, 'temperature', {
+    get: function() {
+        console.log('get!');
+    },
+    set: function(value) {
+        console.log('set!');
+    }
+});
+
+air.temperature = 15; //output: set!
+air.temperature;    //outpu: get!
+    console.log(air.temperature);
 </script>
 </body>
 </html>
