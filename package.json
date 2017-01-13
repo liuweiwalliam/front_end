@@ -1,0 +1,26 @@
+{
+  "name": "front_end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel-core": "^5.8.38",
+    "jquery-weui": "^1.0.0"
+  },
+  "devDependencies": {
+    "jquery-weui": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuweiwalliam/front_end.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liuweiwalliam/front_end/issues"
+  },
+  "homepage": "https://github.com/liuweiwalliam/front_end#readme"
+}
