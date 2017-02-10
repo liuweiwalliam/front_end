@@ -12,7 +12,7 @@
     ajax.send();
     ajax.onreadystatechange = function () {
         if (ajax.readyState == 4) {
-            if (ajax.status == 200) {
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
 //                console.log(ajax.responseText);
 //                var data = eval('('+ajax.responseText+')');
                 var text = ajax.responseText;
@@ -22,10 +22,24 @@
             }
         }
     };
-    //    var promise = new Promise(
-    //            function (resolve, reject) {
-    //
-    //            });
+
+//post
+var $clerckPost  = {"a":123};
+var $postStr = encodeURIComponent(JSON.stringify($clerckPost));
+var ajax = new XMLHttpRequest();
+ajax.open("post", "/api.php?c=getClerkListByFiliale");
+ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ajax.send($postStr);
+ajax.onreadystatechange = function () {
+    if (ajax.readyState == 4) {
+        if ((ajax.status >= 200 && ajax.status < 300) || ajax.status == 304) {
+            var text = ajax.responseText;
+            var data2 = JSON.parse(text);
+            console.log(data2);
+        }
+    }
+};
+
 </script>
 </body>
 </html>
