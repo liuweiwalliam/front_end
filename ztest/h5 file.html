@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file" multiple="true" id="file">
+<input type="button" value="读取图像" id="pic" onclick="showFile('pic')">
+<input type="button" value="二进制" id="bi" onclick="showFile('bi')">
+<input type="button" value="文本" id="text" onclick="showFile('text')">
+<!--<input type="button" value="show" id="show" onclick="showFile()">-->
+<!--<input type="button" value="show" id="show" onclick="showFile()">-->
+<input type="button" value="show" id="show" onclick="showFile()">
+<script>
+
+    function showFile(type) {
+        var filesObj = document.getElementById('file').files[0];
+        var reader = new FileReader();
+        reader.readAsArrayBuffer(filesObj);
+        reader.onload = function (e) {
+            console.log(e.currentTarget.result);
+        };
+    }
+    ;
+
+</script>
+<!--readAsBinaryString-->
+<!--readAsText-->
+<!--readAsDataURL-->
+<!--readArrayBuffer-->
+<!--abort-->
+
+<!--onabort-->
+<!--onerror-->
+<!--onloadstart-->
+<!--onprogress-->
+<!--onload-->
+<!--onloadend-->
+</body>
+</html>

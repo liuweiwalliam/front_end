@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="test" style="margin-top: 2px;">
+<input type="password">
+
+<script src="../lib/js/jquery-2.2.3.js"></script>
+<script>
+    $('input').bind('click','test',function (e) {
+        console.log(e.data);
+    });
+</script>
+
+</body>
+</html>

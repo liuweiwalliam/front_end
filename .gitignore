@@ -1,0 +1,34 @@
+# Dependency Ignore
+qrcode/
+
+# IDE
+.idea
+.buildpath
+.project
+.settings
+.DS_Store
+nbproject
+
+# Vim swap
+*.swp
+.swp
+.swo
+*.swo
+.swn
+*.swn
+*.map
+**/*/.sass-cache/*
+.sass-cache/*
+
+# Config
+Config.json
+test200.json
+test403.json
+
+# Tools
+updateConfig.php
+node_modules/
+
+#composer
+vendor/
+/composer.lock

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    es6
+    function test() {
+        console.log("test");
+    };
+    class Man {
+        constructor(name, age,test) {
+            this.name = name;
+            this.age = age;
+            this.ride = ()=> {
+                console.log("ride");
+            };
+            this.test = test;
+            console.log(new.target);
+        };
+        dojod() {
+            console.log("do job");
+        };
+    };
+    class Sporter extends Man {
+        constructor(age, muscle,test) {
+            super(name, age);
+            this.muscle = muscle;
+            this.race = ()=> {
+                console.log("race");
+            };
+            console.log(new.target);
+        };
+        swim() {
+            console.log('swim');
+        };
+    }
+    ;
+    var a = new Man()
+//    console.log(Sporter.prototype.__proto__);
+//    console.log(Man.prototype);
+
+    var liergouSuper = new Sporter('liergou', 23, true, test());
+//    console.log(liergouSuper.__proto__.__proto__.dojod);
+//    console.log(liergouSuper);
+</script>
+</body>
+</html>
