@@ -7,27 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="../lib/js/jquery-2.2.3.js"></script>
-</head>
-<body>
+<body style="">
 
 
-
-<script src="../lib/js/jquery-2.2.3.js"></script>
 <script>
-var obj ={'a':'aa','b':'bb','c':'cc'};
-delete obj['a'];
-console.log(obj);
+    function Cat(name) {
+        this.name = name;
+    }
+    ;
+    Cat.prototype.sayName = ()=> {
+        console.log(this);
+        return this.name;
+    };
+    const cat = new Cat('bosi');
+    cat.sayName();
 </script>
-
 </body>
 </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="countainer"></div>
+<script src="../../node_modules/react/dist/react.js"></script>
+<script src="../../node_modules/react-dom/dist/react-dom.js"></script>
+<script src="../../node_modules/babel-standalone/babel.js"></script>
+<script type="text/jsx">
+    var Myform = React.createClass({
+        getInitialState: function () {
+            return {
+                'userName': '',
+                'gender': 'man',
+                'checked': true
+            }
+        },
+        handleGerderChange: function (e) {
+            this.setState({'gender': e.target.value});
+        },
+        handleUserNameChange: function (event) {
+            this.setState({'userName': event.target.value});
+//            console.log('name');
+//            console.log(event);
+        },
+        handleCheckingBoxChange: function (e) {
+//            console.log('change');
+//            console.log(e);
+            this.setState({'checked': e.target.checked}, function () {
+                var subBtn = ReactDOM.findDOMNode(this.refs.submit);
+                this.state.checked ? subBtn.removeAttribute('disabled') : subBtn.setAttribute('disabled', false);
+            });
+        },
+        submitHandler: function (e) {
+            e.preventDefault();
+//            console.log(this.e.checked);
+            console.log(this.state);
+        },
+        render: function () {
+            return <form>
+                <lable htmlFor="userName">请输入用户名:</lable>
+                <input type="text" id="userName" defaultValue={this.state.userName}
+                       onBlur={this.handleUserNameChange}/>
+                <br/>
+                <select name="gender" id="gender" value={this.state.gender} onChange={this.handleGerderChange}>
+                    <option value="man">男</option>
+                    <option value="woman">女</option>
+                </select>
+                <br/>
+                <input type="checkbox" defaultValue="用户同意协议" checked={this.state.checked}
+                       onChange={this.handleCheckingBoxChange}/>
+                <input type="submit" defaultValue="注册" ref="submit" onClick={this.submitHandler}/>
+            </form>;
+        }
+    });
+    ReactDOM.render(<Myform></Myform>, document.getElementById('countainer'));
+</script>
+</body>
+</html>

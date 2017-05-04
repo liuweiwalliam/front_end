@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="countainer"></div>
+<script src="../../node_modules/react/dist/react.js"></script>
+<script src="../../node_modules/react-dom/dist/react-dom.js"></script>
+<script src="../../node_modules/babel-standalone/babel.js"></script>
+<script type="text/jsx">
+    var Span = React.createClass({
+        render: function () {
+            <span style={{'color':'red'}}>{this.props.text}</span>
+        },
+    });
+    var MyForm = React.createClass({
+        getInitialState: function () {
+            return {'inputValue': 'hello'}
+        },
+        handleSubmit: function (event) {
+            event.preventDefault();
+            var helloTo = ReactDOM.findDOMNode(this.refs.helloTo).value;
+            console.log(helloTo);
+            ReactDOM.render(<Span text="123"></Span>,document.getElementById('countainer'));
+        },
+        handleChang: function () {
+            let text = this.state.inputValue;
+            this.setState({'inputValue': text + '1'});
+        },
+        render: function () {
+            return <form action="" onSubmit={this.handleSubmit}>
+                <input type="text" ref="helloTo" defaultValue={this.state.inputValue} onChange={this.handleChang}/>
+                <br/>
+                <button type="submit">speak</button>
+            </form>
+        }
+    });
+
+    ReactDOM.render(<MyForm></MyForm>, document.getElementById('countainer'));
+</script>
+</body>
+</html>

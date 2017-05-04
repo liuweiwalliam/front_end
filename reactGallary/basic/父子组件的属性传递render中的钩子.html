@@ -36,7 +36,7 @@
             return ({'name': 'cunxian'});
         },
         render: function () {
-            return (<div onClick={this.handleClick}><Child text={this.state.name}/>{this.state.name}{this.props.age}</div>)
+            return (<div onClick={this.handleClick}><Child text={this.state}/>{this.state.name}{this.props.age}</div>)
         },
         handleClick: function () {
             var name = this.state.name + "1";

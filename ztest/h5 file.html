@@ -3,39 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        div{height:900px;width: 100vw}
+    </style>
 </head>
 <body>
-<input type="file" multiple="true" id="file">
-<input type="button" value="读取图像" id="pic" onclick="showFile('pic')">
-<input type="button" value="二进制" id="bi" onclick="showFile('bi')">
-<input type="button" value="文本" id="text" onclick="showFile('text')">
-<!--<input type="button" value="show" id="show" onclick="showFile()">-->
-<!--<input type="button" value="show" id="show" onclick="showFile()">-->
-<input type="button" value="show" id="show" onclick="showFile()">
+<p  style=" ">
+    <a href="#a">a</a>
+    <a href="#b">b</a>
+    <a href="#c">c</a>
+    <a href="#d">d</a>
+    <a href="#e">e</a>
+</p>
+
+
+
+
+
+<div id="a">a</div>
+<div id="b">b</div>
+<div id="c">c</div>
+<div id="d">d</div>
+<div id="e">e</div>
+
+
+
+
+
 <script>
 
-    function showFile(type) {
-        var filesObj = document.getElementById('file').files[0];
-        var reader = new FileReader();
-        reader.readAsArrayBuffer(filesObj);
-        reader.onload = function (e) {
-            console.log(e.currentTarget.result);
-        };
-    }
-    ;
-
 </script>
-<!--readAsBinaryString-->
-<!--readAsText-->
-<!--readAsDataURL-->
-<!--readArrayBuffer-->
-<!--abort-->
 
-<!--onabort-->
-<!--onerror-->
-<!--onloadstart-->
-<!--onprogress-->
-<!--onload-->
-<!--onloadend-->
 </body>
 </html>

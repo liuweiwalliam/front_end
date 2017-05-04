@@ -30,5 +30,14 @@
 <!--onprogress-->
 <!--onload-->
 <!--onloadend-->
+<script>
+
+    var a = {'a':'aaa','b':'bb',"c":[1,2,3]};
+    var b = Object.assign({},a);
+    console.log(b);
+    a.c[0] = 6;
+    a.a = 123;
+    console.log(b);
+</script>
 </body>
 </html>
