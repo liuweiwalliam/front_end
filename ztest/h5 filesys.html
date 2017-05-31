@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<script>-->
+    <!--window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;-->
+    <!--var fs = null;-->
+    <!--var msg = "";-->
+    <!--initFs = function () {-->
+        <!--window.requestFileSystem(window.TEMPORARY, 1024 * 10, function (filesystem) {-->
+            <!--fs = filesystem;-->
+            <!--console.log(fs);-->
+        <!--})-->
+    <!--};-->
+    <!--initFs();-->
+<!--</script>-->
+<!--readAsBinaryString-->
+<!--readAsText-->
+<!--readAsDataURL-->
+<!--readArrayBuffer-->
+<!--abort-->
+
+<!--onabort-->
+<!--onerror-->
+<!--onloadstart-->
+<!--onprogress-->
+<!--onload-->
+<!--onloadend-->
+<script>
+
+    var a = {'a':'aaa','b':'bb',"c":[1,2,3]};
+    var b = Object.assign({},a);
+    console.log(b);
+    a.c[0] = 6;
+    a.a = 123;
+    console.log(b);
+</script>
+</body>
+</html>

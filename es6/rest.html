@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    function sum(...val) {
+//        let re = 0;
+//        for(var num in val){
+//            item = parseFloat(val[num])
+//            re += item;
+//            console.log(item);
+//        };
+//        return re;
+//    };
+//    console.log(sum(4,5,6,7));
+function sum(...val) {
+    let re = 0;
+    for(var num of val){
+        item = parseFloat(num)
+        re += item;
+        console.log(item);
+    };
+    return re;
+};
+console.log(sum(4,5,6,7));
+</script>
+</body>
+</html>

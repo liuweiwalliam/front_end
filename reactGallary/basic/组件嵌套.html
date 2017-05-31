@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="countainer"></div>
+<script src="../../node_modules/react/dist/react.js"></script>
+<script src="../../node_modules/react-dom/dist/react-dom.js"></script>
+<script src="../../node_modules/babel-standalone/babel.js"></script>
+<script type="text/jsx">
+    var Message = React.createClass({
+        getInitialState: function () {
+            return ({'isVisible': true, 'titleMessage': 'state'})
+        },
+        render: function () {
+            var style = {"color": "blue", 'display': this.state.isVisible ? "block" : "none"};
+            console.log(style);
+            return(<h1 onClick={this.cog} style={style}>{this.state.titleMessage}</h1>)
+        },
+        attr: "test",
+//        style: {"color": "blue", 'visible': this.state.isVisible ? "block" : "none"},
+        cog: function () {
+            console.log(this.attr);
+        }
+    });
+    var messageBox = ReactDOM.render(
+            <Message/>,
+            document.getElementById('countainer'),
+            finish
+    );
+    function finish() {
+        console.log("渲染完成！！！！！");
+    }
+//    messageBox.setState({titleMessage:'aaaaa',isVisible:true})
+</script>
+</body>
+</html>

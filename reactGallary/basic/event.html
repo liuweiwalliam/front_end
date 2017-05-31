@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container">
+    <!-- This element's contents will be replaced with your component. -->
+</div>
+<script src="../../node_modules/react/dist/react.js"></script>
+<script src="../../node_modules/react-dom/dist/react-dom.js"></script>
+<!--<script src="../../node_modules/babel-standalone/babel.js"></script>-->
+<script src="../../lib/JSXTransformer.js"></script>
+
+<script type="text/jsx">
+//    refs可以拿子子组件的props/state/方法；
+//
+//    findDOMNOde拿到的是原生的标签相关属性；
+    var TestClickcompoment = React.createClass({
+        handleClick: function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            let tipE = ReactDOM.findDOMNode(this.refs.tip);
+            if (tipE.style.display === "none") {
+                tipE.style.display = "inline";
+            } else {
+                tipE.style.display = "none";
+            }
+        },
+        render: function () {
+            return (<div>
+                <button onClick={this.handleClick}>显示|隐藏</button>
+                <span ref="tip">点击测试</span>
+            </div>)
+        },
+    });
+    var TestInputComponent = React.createClass({
+        changHandler: function(e){
+            this.setState({
+                inputContent:e.target.value
+            });
+        },
+        getInitialState: function () {
+            return {
+                inputContent: ""
+            }
+        },
+        render: function () {
+            return (
+                    <div><input type="text" onChange={this.changHandler}/><span>{this.state.inputContent}</span></div>
+            )
+        },
+    });
+    ReactDOM.render(<div>
+        <TestClickcompoment/>
+        <br/><br/><br/>
+        <TestInputComponent/>
+    </div>, document.getElementById("container"));
+</script>
+</body>
+</html>

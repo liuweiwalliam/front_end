@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //        var a = function () {
+    //            var b = "123";
+    //            var c = function () {
+    //                var d = b;
+    //                return d;
+    //            };
+    //            return c;
+    //        };
+    //
+    //        console.log(a()());
+    //        console.log(b);
+
+    var name = "The Window";
+    var object = {
+        name : "My Object",
+        getNameFunc : function(){
+            var that = this;
+            return function(){
+                return that.name;
+            };
+        }
+    };
+    alert(object.getNameFunc()());
+</script>
+</body>
+</html>

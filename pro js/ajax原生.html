@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../ztest/jquery-2.2.3.js"></script>
+<script>
+    var ajax = new XMLHttpRequest();
+    ajax.open("get", "testjson.json", true);
+    ajax.send();
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4) {
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+//                console.log(ajax.responseText);
+//                var data = eval('('+ajax.responseText+')');
+                var text = ajax.responseText;
+                var data2 = JSON.parse(text);
+                console.log(data2);
+
+            }
+        }
+    };
+
+//post
+var $clerckPost  = {"a":123};
+var $postStr = encodeURIComponent(JSON.stringify($clerckPost));
+var ajax = new XMLHttpRequest();
+ajax.open("post", "/api.php?c=getClerkListByFiliale");
+ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ajax.send($postStr);
+ajax.onreadystatechange = function () {
+    if (ajax.readyState == 4) {
+        if ((ajax.status >= 200 && ajax.status < 300) || ajax.status == 304) {
+            var text = ajax.responseText;
+            var data2 = JSON.parse(text);
+            console.log(data2);
+        }
+    }
+};
+
+</script>
+</body>
+</html>

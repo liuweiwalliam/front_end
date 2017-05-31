@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function foo() {
+    }
+    ;
+    Object.defineProperty(foo.prototype, "z", {
+        get: function () {
+//            console.log('get');
+            if (this.$z == undefined) {
+                return 1;
+            } else {
+                return this.$z;
+            }
+        },
+        set: function (value) { //参数为赋值传入的值
+            this.$z = value;
+//            console.log('set');
+            return this.$z
+        }
+    });
+    var obj = new foo();
+    /*
+     当实例化的对象没有z这个属性时，当我们尝试去赋值时，（如果它的原型上有get和set方法时），
+     他会调用它的构造函数的原型对象上的get,set方法去赋值，而不是给当前对象添加新属性的方法去处理。
+     */
+    console.log(obj.z);
+    Object.defineProperty(obj, "z", {
+        value: 100,
+        configurable: true,
+    });
+    /*
+     当通过Object.defineProperty给添加属性时是真正的给obj添加属性。不在通过get,set方法。
+     */
+    obj.z = 200;
+    console.log(obj.z);//100
+    delete obj.z;//删除完定义的属性后，再次调用会通过set/get方法。
+    console.log(obj.z);//1
+    obj.z = 300;
+    console.log(obj.z);//300
+</script>
+</body>
+</html>
