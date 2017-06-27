@@ -6,26 +6,13 @@
     <script src="../lib/js/jquery-2.2.3.js"></script>
 </head>
 <body>
-<a href="#div">
-    fdgfdhfg
-</a>
-<div id="div" style="height:100px;vertical-align: bottom;overflow:scroll">
-    dfsdfsdfsdfs<br>dfsdfsdfsdfsdfs<br>dfsdfsdfsdfs<br>dfsdfs<br>dfs<br>dfs<br>dfs<br>dfs
-    dfsdfsdfsdfs<br>dfsdfsdfsdfsdfs<br>dfsdfsdfsdfs<br>dfsdfs<br>dfs<br>dfs<br>dfs<br>dfs
-    dfsdfsdfsdfs<br>dfsdfsdfsdfsdfs<br>dfsdfsdfsdfs<br>dfsdfs<br>dfs<br>dfs<br>dfs<br>dfs
-</div>
-<script>
-    var a = {
-        test: function () {
-            function innerTest() {
-                console.log(this);
-            };
-            console.log(this);
-            innerTest();
-        }
-    };
-    a.test();
 
+
+<script>
+    function test(a, b, c) {
+        console.log(arguments.length);
+    };
+    test(1,2,2,2);
 </script>
 </body>
 </html>
