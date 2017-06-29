@@ -13,6 +13,7 @@
     "jquery-weui": "^1.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "webpack": "^3.0.0",
     "yo": "^1.8.5"
   },
   "scripts": {
