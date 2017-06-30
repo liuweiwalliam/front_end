@@ -22,6 +22,7 @@
     };
     var mike = new('mike',23);
     console.log(mike);
+
 </script>
 </body>
 </html>
