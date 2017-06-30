@@ -1,5 +1,6 @@
 # Dependency Ignore
 /node_moduales/
+/webpack/node_moduales/
 
 # IDE
 .idea
