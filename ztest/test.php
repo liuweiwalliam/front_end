@@ -11,10 +11,10 @@
 <div></div>
 </body>
 <script>
-    var str='';
-    for(var i = 1;i<100;i++){
-        str+=    '<h2></h2> <p id='+i+'></p>';
-    }
-    document.getElementsByTagName('body')[0].innerHTML = str;
+
 </script>
+<?php
+$needBtn = true;
+var_dump(isset($needBtn));
+?>
 </html>
