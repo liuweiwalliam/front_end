@@ -4,4 +4,4 @@
 let member = {"a": "aa", "b": "bb"};
 function world() {
     return member;
-}
+};
