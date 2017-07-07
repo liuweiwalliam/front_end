@@ -9,20 +9,21 @@
 </head>
 <body>
 <script>
-    class Person
-    {
-        constructor(name,gage)
-        {
-            this.name = name;
-            this.age = age;
-        }
-        ShowInfo() {
-            console.log(this.name,this.age);
-        }
-    };
-    var mike = new('mike',23);
-    console.log(mike);
-
+//    class Person
+//    {
+//        constructor(name,gage)
+//        {
+//            this.name = name;
+//            this.age = age;
+//        }
+//        ShowInfo() {
+//            console.log(this.name,this.age);
+//        }
+//    };
+//    var mike = new('mike',23);
+//    console.log(mike);
+//['aaa','bbb'].indexOf('aaa');
+console.log(window.navigator);
 </script>
 </body>
 </html>

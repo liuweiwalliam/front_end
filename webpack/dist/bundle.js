@@ -68,10 +68,10 @@
 /***/ (function(module, exports) {
 
 /**
- * Created by walliam on 2017/6/30.
+ * Created by walliam on 2017/7/7.
  */
-function hello() {
-    console.log('hello');
+function helloWorld() {
+    console.log('helloWord');
 }
 
 /***/ })
