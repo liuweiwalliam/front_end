@@ -4,7 +4,7 @@
     "style-loader": "^0.18.2",
     "webpack": "^3.1.0"
   },
-  "scripts":{
-    "webpack":"webpack --progress --display-modules --colors --display-reasons"
+  "scripts": {
+    "webpack": "webpack --progress --display-modules --colors --display-reasons"
   }
 }
