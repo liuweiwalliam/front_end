@@ -60,21 +60,19 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */
+/* 0 */
 /***/ (function(module, exports) {
 
 /**
  * Created by walliam on 2017/7/7.
  */
-function helloWorld2() {
-    console.log('helloWord2');
+function helloWorld() {
+    console.log('helloWord');
 }
-helloWorld2();
 
 /***/ })
 /******/ ]);
