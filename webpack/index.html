@@ -8,37 +8,6 @@
     <title>webpackTest</title>
 </head>
 <body>l
-<!--<script src="./dist/bundle.js"></script>-->
-<script>
-    function Setcookie(key, val) {
-        if((typeof key != 'string')|| (typeof val != 'string')){
-            console.log("非法参数，SetCookie");
-            return false
-        }
-        document.cookie = key + '=' + val;
-    }
-    function Getcookie(key) {
-        if (typeof key == 'number') {
-            key = "" + key;
-        }
-        if (typeof key != 'string') {
-            console.log('传入非法参数');
-            return null
-        }
-        var co = document.cookie;
-        var cookieArr = co.split(';');
-        var cookieObj = {};
-        cookieArr.forEach(function (item, index) {
-            var cookieItem = item.split('=');
-            cookieObj[cookieItem[0]] = cookieItem[1];
-        });
-        if (cookieObj.hasOwnProperty(key)) {
-            return cookieObj[key];
-        } else {
-            return null
-        }
-    };
-
-</script>
+<script src="./dist/bundle.js"></script>
 </body>
 </html>
