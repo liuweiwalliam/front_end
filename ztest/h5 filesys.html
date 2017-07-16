@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        div {
+            content: '123';
+            height: 100px;
+            width: 100px;
+            border: 1px groove black;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
 
 <!--<script>-->
-    <!--window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;-->
-    <!--var fs = null;-->
-    <!--var msg = "";-->
-    <!--initFs = function () {-->
-        <!--window.requestFileSystem(window.TEMPORARY, 1024 * 10, function (filesystem) {-->
-            <!--fs = filesystem;-->
-            <!--console.log(fs);-->
-        <!--})-->
-    <!--};-->
-    <!--initFs();-->
+<!--window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;-->
+<!--var fs = null;-->
+<!--var msg = "";-->
+<!--initFs = function () {-->
+<!--window.requestFileSystem(window.TEMPORARY, 1024 * 10, function (filesystem) {-->
+<!--fs = filesystem;-->
+<!--console.log(fs);-->
+<!--})-->
+<!--};-->
+<!--initFs();-->
 <!--</script>-->
 <!--readAsBinaryString-->
 <!--readAsText-->
@@ -30,14 +39,17 @@
 <!--onprogress-->
 <!--onload-->
 <!--onloadend-->
+<textarea id="1"></textarea>
+<div id="2"></div>
+<script src="../lib/js/jquery-1.11.2.min.js"></script>
 <script>
+    $("#1,#2").on({
+        "input": function () {
+            console.log('input');
+        }
+    });
 
-    var a = {'a':'aaa','b':'bb',"c":[1,2,3]};
-    var b = Object.assign({},a);
-    console.log(b);
-    a.c[0] = 6;
-    a.a = 123;
-    console.log(b);
+
 </script>
 </body>
 </html>
