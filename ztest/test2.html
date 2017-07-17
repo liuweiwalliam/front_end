@@ -7,14 +7,12 @@
 </head>
 <body>
 
-<a href="//www.baidu.com" data-href="aaaaaaaaaaaaa">a label</a>
+<a href="//www.baidu.com" data-href="aaaaaaaaaaaaa" id="a">a label</a>
 <script>
-const a = document.getElementsByTagName('a')[0];
-a.addEventListener('click', function (e) {
-e.preventDefault();
-console.log(Map);
-console.log(this.dataset instanceof Object);
-})
+var a = document.getElementById('a');
+a.addEventListener("click",function (event) {
+    console.log(event);
+});
 </script>
 </body>
 </html>
