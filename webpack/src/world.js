@@ -3,5 +3,11 @@
  */
 let member = {"a": "aa", "b": "bb"};
 function world() {
-    return member;
+    for (var key in member) {
+        console.log(member[key]);
+    }
 };
+module.exports = {
+    member: member,
+    world: world
+}

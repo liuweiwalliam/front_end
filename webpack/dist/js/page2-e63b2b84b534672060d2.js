@@ -60,19 +60,42 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */
-/***/ (function(module, exports) {
+/* 0 */,
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
 
 /**
  * Created by walliam on 2017/7/7.
  */
-function helloWorld() {
-    console.log('helloWord');
+var world = __webpack_require__(2);
+function helloWorld2() {
+    console.log('helloWord2');
 }
+helloWorld2();
+console.log(world);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+/**
+ * Created by walliam on 2017/7/4.
+ */
+let member = {"a": "aa", "b": "bb"};
+function world() {
+    for (var key in member) {
+        console.log(member[key]);
+    }
+};
+module.exports = {
+    member: member,
+    world: world
+}
+
 
 /***/ })
 /******/ ]);

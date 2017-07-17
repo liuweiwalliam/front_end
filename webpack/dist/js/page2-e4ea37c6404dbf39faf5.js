@@ -66,15 +66,36 @@
 /******/ ([
 /* 0 */,
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 /**
  * Created by walliam on 2017/7/7.
  */
+var world = __webpack_require__(2);
 function helloWorld2() {
     console.log('helloWord2');
 }
 helloWorld2();
+console.log(world);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+/**
+ * Created by walliam on 2017/7/4.
+ */
+let member = {"a": "aa", "b": "bb"};
+function world() {
+    for (var key in member) {
+        console.log(member[key]);
+    }
+};
+module.exports = {
+    member: member,
+    world: world
+}
+
 
 /***/ })
 /******/ ]);
