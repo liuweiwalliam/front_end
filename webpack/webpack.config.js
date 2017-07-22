@@ -9,6 +9,11 @@ module.exports = {
         path: path.resolve(__dirname, './dist/'),//打包后的输出文件夹
         filename: 'js/[name].js'
     },
+    module:{
+        loaders:[
+            {test:/\.js$/,loaders:'babel',query:{preset:['latest']},}
+        ]
+    },
     plugins: [
         new htmlWebpackPlugin({
             template: 'index.html',
