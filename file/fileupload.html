@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file" multiple id="file" accept="image/gif,image/jpeg,image/jpg">
+<script>
+    var elm = document.getElementById("file");
+    elm.onchange = function (event) {
+        console.log(event);
+        var file = event.target.files;
+//        var img = document.createElement('img');
+//        if(file && file.length>0){ //回显图片的功能
+//            fileReader = new FileReader();
+//            fileReader.onload = function (ev) {
+//                img.src = ev.target.result;
+//            };
+//            fileReader.readAsDataURL(file[0]);
+//            document.getElementsByTagName("body")[0].appendChild(img);
+//        }
+        if(file && file.length>0){ //回显图片的功能
+            fileReader = new FileReader();
+            fileReader.onload = function (ev) {
+                var xhr= new XMLHttpRequest();
+                xhr.open('POST', './file.php', true);
+                xhr.onload = function(e) {
+                    if(this.status == 200||this.status == 304){
+                        console.log(this);
+                    }
+                };
+                xhr.send(ev.target.value);
+
+            };
+            fileReader.readAsDataURL(file[0]);
+        }
+    };
+
+</script>
+</body>
+</html>
