@@ -3,7 +3,7 @@
  */
 var path = require("path");
 import layer from './layer/layer';
-import  '../css/common.css';
+import  '../css/common.scss';
 const App = function () {
     const num = 1;
     alert(1);

@@ -70,8 +70,8 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_layer__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_common_css__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_common_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__css_common_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_common_scss__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_common_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__css_common_scss__);
 /**
  * Created by walliam on 2017/7/19.
  */
@@ -550,8 +550,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/_css-loader@0.28.4@css-loader/index.js??ref--1-1!../../node_modules/_postcss-loader@2.0.6@postcss-loader/lib/index.js??ref--1-2!./common.css", function() {
-			var newContent = require("!!../../node_modules/_css-loader@0.28.4@css-loader/index.js??ref--1-1!../../node_modules/_postcss-loader@2.0.6@postcss-loader/lib/index.js??ref--1-2!./common.css");
+		module.hot.accept("!!../../node_modules/_css-loader@0.28.4@css-loader/index.js??ref--2-1!../../node_modules/_postcss-loader@2.0.6@postcss-loader/lib/index.js??ref--2-2!../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!./common.scss", function() {
+			var newContent = require("!!../../node_modules/_css-loader@0.28.4@css-loader/index.js??ref--2-1!../../node_modules/_postcss-loader@2.0.6@postcss-loader/lib/index.js??ref--2-2!../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!./common.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -569,7 +569,7 @@ exports = module.exports = __webpack_require__(6)(undefined);
 
 
 // module
-exports.push([module.i, "body {\r\n    margin: 0;\r\n    padding: 0;\r\n    background: yellow;\r\n}\r\np{\r\n    padding-top: 0;\r\n}\r\n.flex_div{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n}", ""]);
+exports.push([module.i, ".flex_div{display:-webkit-box;display:-ms-flexbox;display:flex}body{margin:0;padding:0;background:#ff0}p{padding-top:0}", ""]);
 
 // exports
 
