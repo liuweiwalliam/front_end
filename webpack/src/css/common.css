@@ -6,3 +6,6 @@ body {
 p{
     padding-top: 0;
 }
+.flex_div{
+    display: flex;
+}

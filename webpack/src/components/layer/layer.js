@@ -14,4 +14,5 @@ layer.prototype.tpl = function () {
 // module.exports = {
 //     layer: layer
 // }
+console.log(layer);
 export  default layer;
