@@ -6,4 +6,4 @@ import layer from './layer/layer';
 const App = function () {
 
 };
-var app = new App();
+let app = new App();

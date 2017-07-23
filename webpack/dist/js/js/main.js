@@ -65,44 +65,48 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_layer__ = __webpack_require__(1);
-/**
- * Created by walliam on 2017/7/19.
- */
 
 
-const App = function () {
+var _layer = __webpack_require__(1);
 
-};
+var _layer2 = _interopRequireDefault(_layer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var App = function App() {}; /**
+                              * Created by walliam on 2017/7/19.
+                              */
+
 var app = new App();
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Cannot find module \"layer.html\"");
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 /**
  * Created by walliam on 2017/7/19.
  */
-
-var layer = function () {
-
-};
+// import  tpl from 'layer.html'
+var layer = function layer() {};
 layer.prototype.init = function () {
-    return 'layerObj'
+    return 'layerObj';
 };
 layer.prototype.tpl = function () {
-    return __WEBPACK_IMPORTED_MODULE_0_layer_html___default.a
-}
+    return tpl;
+};
 // module.exports = {
 //     layer: layer
 // }
-/* unused harmony default export */ var _unused_webpack_default_export = (layer);
+exports.default = layer;
 
 /***/ })
 /******/ ]);

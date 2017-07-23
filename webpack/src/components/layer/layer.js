@@ -1,7 +1,7 @@
 /**
  * Created by walliam on 2017/7/19.
  */
-import  tpl from 'layer.html'
+// import  tpl from 'layer.html'
 var layer = function () {
 
 };

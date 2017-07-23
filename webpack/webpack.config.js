@@ -6,12 +6,16 @@ var htmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {'main': './src/components/app.js'}, //入口文件
     output: {
-        path: path.resolve(__dirname, './dist/'),//打包后的输出文件夹
+        path: path.resolve(__dirname, './dist/js'),//打包后的输出文件夹
         filename: 'js/[name].js'
     },
     module:{
         loaders:[
-            {test:/\.js$/,loaders:'babel',query:{preset:['latest']},}
+            {
+                test:/\.js$/,
+                loader:'babel-loader',
+                query:{presets:['es2015']},//处理的参数
+            }
         ]
     },
     plugins: [
