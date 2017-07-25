@@ -9,20 +9,17 @@
 </head>
 <body>
 <script>
-    //    class Person
-    //    {
-    //        constructor(name,gage)
-    //        {
-    //            this.name = name;
-    //            this.age = age;
-    //        }
-    //        ShowInfo() {
-    //            console.log(this.name,this.age);
-    //        }
-    //    };
-    //    var mike = new('mike',23);
-    //    console.log(mike);
-    //['aaa','bbb'].indexOf('aaa');
+
 </script>
 </body>
 </html>
+<?php
+class Person($name){
+    private $name;
+    function __construct($name){
+        $this->name = $name;
+    }
+};
+var $man = new Person();
+
+?>

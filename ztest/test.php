@@ -10,36 +10,11 @@
 <body>
 <div></div>
 </body>
-<script>
-    var obj = {name:'vue'};
-    Object.defineProperty(obj, 'name', {
-//        value: 'test',
-        set: function () {
-            console.log(this);
-        },
-        get: function () {
-            console.log(this);
-        }
-    })
-
-//var book={
-////    _year : 2004,
-//    edition:1
-//};
-//Object.defineProperty(book,"year",{
-//    get: function(){
-//        console.log(this._year);
-//        return this._year;
-//    },
-//    set : function(newValue){
-//        if (newValue > 2004){
-//            this._year = newValue;
-//            this.edition += newValue -2004;
-//        }
-//        console.log( this.edition);
-//    }
-//});
-//book.year =2005;
 </script>
-
-</html>
+</
+html >
+<?php
+$a = ['a'=>1,'b'=>2,'c'=>3];
+unset($a->a);
+var_dump($a);
+?>
