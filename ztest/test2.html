@@ -9,10 +9,66 @@
 
 <!--<a href="//www.baidu.com" data-href="aaaaaaaaaaaaa" id="a">a label</a>-->
 <script>
-var a = document.getElementById('a');
-a.addEventListener("click",function (event) {
-    console.log(event);
-});
+    /*给Number类型添加精确四则运算*/
+    /**
+     * 加法
+     * @param addend
+     * @returns {number}
+     */
+    Number.prototype.add = function (addend) {
+      var digit1 = 0, digit2 = 0, m, s1 = this.toString(), s2 = addend.toString();
+      if (s1.indexOf(".") > -1) {
+        digit1 = s1.split(".")[1].length;
+      }
+      if (s2.indexOf(".") > -1) {
+        digit2 = [1].length;s2.split(".")
+      }
+      m = Math.pow(10, Math.max(digit1, digit2));
+      return (this * m + addend * m) / m;
+    };
+  Number.prototype.minus = function (subtractor) {
+    var s1 = this.toString(), s2 = subtractor.toString(), digit1 = 0, digit2 = 0, m, n;
+    if (s1.indexOf(".") > -1) {
+      digit1 = s1.split(".")[1].length;
+    }
+    if (s2.indexOf(".") > -1) {
+      digit2 = s2.split(".")[1].length;
+    }
+    m = Math.pow(10, n = Math.max(digit1, digit2));
+    return ((this * m - subtractor * m) / m).toFixed(n);
+  };
+  /**
+   * 乘法
+   * @param multiplier
+   * @returns {number}
+   */
+  Number.prototype.mul = function (multiplier) {
+    var digit = 0, s1 = this.toString(), s2 = multiplier.toString();
+    if (s1.indexOf(".") > -1) {
+      digit += s1.split(".")[1].length;
+    }
+    if (s2.indexOf(".") > -1) {
+      digit += s2.split(".")[1].length;
+    }
+    return Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, digit);
+  };
+  /**
+   * 除法
+   * @param dividend 除数
+   * @returns {number}
+   */
+  Number.prototype.div = function (dividend) {
+    var digit1 = 0, digit2 = 0, sign1 = this, sign2 = dividend;
+    if (sign1.toString().indexOf(".") > -1) {
+      digit1 = sign1.toString().split(".")[1].length;
+      sign1 = sign1.toString().replace(".", "");
+    }
+    if (dividend.toString().indexOf(".") > -1) {
+      digit2 = dividend.toString().split(".")[1].length;
+      sign2 = dividend.toString().replace(".", "");
+    }
+    return (sign1 / sign2) * Math.pow(10, digit2 - digit1);
+  };
 </script>
 </body>
 </html>

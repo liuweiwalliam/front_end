@@ -8,13 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-<div></div>
-</body>
+<script>
+  var arr = [1, 2, 3]
+  arr.forEach(function (val, index) {
+    if (val != 2) {
+      arr.splice(index, 1)
+    }
+  })
+    console.log(arr);
 </script>
-</
-html >
-<?php
-$a = ['a'=>1,'b'=>2,'c'=>3];
-unset($a->a);
-var_dump($a);
-?>
+</body>
+</html>
