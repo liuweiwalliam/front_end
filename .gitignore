@@ -1,6 +1,6 @@
 # Dependency Ignore
-*/node_moduales/
-*/vueMusic/
+/*node_moduales/
+/vueMusic/
 
 # IDE
 .idea
