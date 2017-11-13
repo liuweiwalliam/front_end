@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Person {
+        constructor(name,age) {
+            this.name = name;
+            this.age = age
+        }
+        say() {
+            console.log(this);
+//            console.log(this.name,this.age);
+        }
+    };
+    var wallaim = new Person('walliam');
+    wallaim.say();
+
+    var globalSay = wallaim.say;
+    console.log(globalSay.prototype);//undefined   ??  why
+</script>
+</body>
+</html>
