@@ -6,10 +6,19 @@ module.exports = {//注意这里是exports不是export
     },
     module: {
         loaders:[
+            // {
+            //     test: /\.js[x]?$/,
+            //     exclude: /node_modules/,
+            //     loader: 'babel-loader?presets[]=es2015&presets[]=react'
+            // },
             {
-                test: /\.js[x]?$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader?presets[]=es2015&presets[]=react'
+                loader: 'babel-loader',
+                options: {
+                    presets: ["es2015", "react"],
+                    // plugins:["transform-decorators-legacy",["import",[{'libraryName':'antd'}]],"add-module-exports",'antd']
+                }
             },
         ]
     }

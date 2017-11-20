@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "babel-core": "^5.8.38",
+    "babel-core": "^5.8.38"
   },
   "devDependencies": {
     "babel": "^6.23.0",
