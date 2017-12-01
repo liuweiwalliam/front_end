@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //promise的resolve和reject两种方法在then中定义，
+    let test = new Promise((resolve, reject) => {  //异步的操作
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", 'test.txts');
+        xhr.onload = () => resolve(xhr.responseText);
+        xhr.onerror = () => reject(xhr.statusText);
+        xhr.send();
+        setTimeout(resolve, 300, xhr.responseText);
+    });
+    let test2 = new Promise((resolve, reject) => {  //异步的操作
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", 'test.txt');
+        xhr.onload = () => resolve(xhr.responseText);
+        xhr.onerror = () => reject(xhr.statusText);
+        xhr.send();
+        setTimeout(resolve, 800, xhr.responseText);
+    });
+
+
+//    /**
+//     * 参数1时传入的resolve，promise的执行体执行成功后调用，参数2是reject,执行体报错时触发；
+//     * 调用时promise的status改变pendding,fulfilled，rejecty
+//     **/
+//    test.then((text) => {
+//        console.log(text);
+//    }, () => {
+//        console.log('err');
+//    });
+
+
+
+//    /**
+//     * 一个 Promise，它将在上述可迭代对象中的所有 Promise 被 resolve 之后被 resolve，
+//     * 或者在任一 Promise 被 reject 后被 reject。
+//     **/
+//    Promise.all([test, test2]).then(value => { //value是传进resolve的参数们组成的数组,可以对value位置结构赋值
+//        console.log(value);
+//    })
+
+</script>
+</body>
+</html>
