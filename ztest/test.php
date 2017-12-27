@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+<?php echo 'BAD904DC-65F0-6F60-0EF7-1038234268A1' == 0 ?>
 <script>
   var arr = [1, 2, 3]
   arr.forEach(function (val, index) {
