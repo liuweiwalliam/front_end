@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>汪——动态select</title>
+</head>
+<body>
+<!--select的挂载目标节点-->
+<div id="selectContainer"></div>
+<script>
+    let selectModule = {  //select的渲染时的数据模型（由你给提供）
+        dog: 'ShenXingcheng',
+        bear: 'LiuWei',
+        pig: 'ZhuZhenfeng'
+    };
+    //生成渲染select的dom的字符串
+    let selectStr = '<select name="" id="select">';
+    for (let key in selectModule) {
+        let selectStrOption = '<option value="' + selectModule[key] + '">' + key + '</option>';
+        selectStr += selectStrOption;
+    }
+    selectStr += '</select>';
+    //将字符串放到要挂载的select的目标节点上
+    document.getElementById("selectContainer").innerHTML = selectStr;
+//    为select添加监听事件
+    document.getElementById("select").addEventListener("change", selectChang);
+    function selectChang(e) {
+        console.log(e.target.value);
+    }
+</script>
+</body>
+</html>
