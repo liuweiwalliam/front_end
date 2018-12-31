@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="imgContainer">
+
+</div>
+<script>
+    let imgSourceArr = [];
+
+    function imgQue(imgSourceArr) {
+        // let imgLoaderArr = [];
+        let onLoadArr = [];
+        let i = 0;
+        for (i = 0; i < 6; i++) {
+            let imgDom =  document.createElement(`<img src=${imgSourceArr[i]} onload="onLoad(i)">`);
+            document.getElementsByClassName('imgContainer')[0].appendChild(imgDom);
+        }
+
+        function onLoad(num) {
+            onLoadArr.push(num);
+            if(i<imgSourceArr){
+                let nextNum = i++;
+                let imgDom =  document.createElement(`<img src=${imgSourceArr[nextNum]} onload="onLoad(nextNum)">`)
+                document.getElementsByClassName('imgContainer')[0].appendChild(imgDom);
+            }
+
+        }
+    }
+
+</script>
+</body>
+</html>

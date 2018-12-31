@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let promise = new Promise(function (resolve, reject) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', '测试地址');
+        xhr.send();
+        xhr.onload = function () {
+            resolve(xhr.response.text)
+        }
+        xhr.onerror =function () {
+            reject(xhr.response.text)
+        }
+    })
+</script>
+</body>
+</html>

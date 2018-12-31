@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //拆分成字符串 按位相加
+    function add(num1, num2) {
+        let arr = getSameLength(toArr(num1), toArr(num2));
+        let num1Arr = arr[1], num2Arr = arr[2];
+        let isAdd = false;
+        let resultArr = [];
+        num1Arr.forEach(function (item, index) {
+            let result = singleAdd(num1[index], num2[index], isAdd);
+            isAdd = result.isAdd;
+            resultArr.push(result.num)
+            if(isAdd && index == num1Arr.length){
+                resultArr.push(1)
+            }
+        })
+       return parseInt(resultArr.reverse().contact(''))
+
+    }
+
+    function toArr(num) {//将数字按位转换为字符串数组，
+        let arr = [];
+        if (num > 0) {
+            let str = "" + num;
+            for (let i = 0; i <= str.length - 1; i++) {
+                arr.push(str[i.length - i])
+            }
+        } else if (num < 0) {
+            let str = "" + num;
+            for (let i = 0; i <= str.length - 1; i++) {
+                arr.push('-' + str[i.length - i])
+            }
+        }
+        return arr
+    }
+
+    function getSameLength(arr1, arr2) { //将两个数组转换为相同的长度
+        let len1 = arr1.length;
+        let len2 = arr2.length;
+        let lenMax = len1 > len2 ? len1 : len2;
+        let subLen = lenMax - len1 == 0 ? lenMax - len2 : lenMax - len1;
+        let arr = [];
+        for (var i = 0; i < subLen; i++) {
+            arr.push("0")
+        }
+        if (len1 >= len2) {
+            arr2.contact(arr)
+        } else {
+            arr1.concat(arr)
+        }
+        return [arr1, arr2]
+
+    }
+
+    function singleAdd(str1, str2, isAdd) { //sss按位相加返回结果
+
+        let num1 = parseInt(str1) + parseInt(str2);
+        if (isAdd) {
+            num1 += 1;
+        }
+        if (num1 >= 10) {
+            return {
+                isAdd: true, num: num1 - 10
+            }
+        } else {
+            return {
+                isAdd: false, num: num1
+            }
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
