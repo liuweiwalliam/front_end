@@ -1,47 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        .test {
-            display: flex;
-            width: 1300px;
-            justify-content: space-between;
-        }
-
-        .test2 {
-            width: 50px;
-            height: 50px;
-            background-color: yellow;
-        }
-    </style>
-</head>
-<body style="">
-<style>
-    .bg {
-        width: 300px;
-        height: 50px;
-        background: #caca8c;
-        background-image: -webkit-gradient(linear, 50% 0, 0 100%, from(transparent), color-stop(.5, transparent),
-        color-stop(.5, #d86707), to(#d86707));
-        background-size: 30px 15px;
-        background-repeat: repeat-x;
-        background-position: 0 100%;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <style>
+    .test {
+      display: flex;
+      width: 1300px;
+      justify-content: space-between;
     }
-</style>
-<div class="bg"></div>
-<script>
-    let a = 123;
-    let b = 456;
-    test=(a,b)=>{
-        console.log(a,b);
-    };
-        test(a,b);
 
-</script>
+    .test2 {
+      width: 50px;
+      height: 50px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body style="">
+  <style>
+    .bg {
+      width: 300px;
+      height: 50px;
+      background: #caca8c;
+      background-image: -webkit-gradient(linear,
+        50% 0,
+        0 100%,
+        from(transparent),
+        color-stop(0.5, transparent),
+        color-stop(0.5, #d86707),
+        to(#d86707));
+      background-size: 30px 15px;
+      background-repeat: repeat-x;
+      background-position: 0 100%;
+    }
+  </style>
+  <div class="bg"></div>
+  <script>
+    function hex2RGB(hex) {
+      let newHex = hex.substr(1, hex.length - 1);
+      let hexArr = [];
+      if (newHex.length == 3) {
+        hexArr = [newHex[0] + newHex[0], newHex[1] + newHex[1], newHex[2] + newHex[2]];
+      } else if (newHex.length == 6) {
+        hexArr = [newHex.substr(0, 2), newHex.substr(2, 2), newHex.substr(4, 2)]
+      } else {
+        return hex
+      }
+      let RGBArr = [parseInt(hexArr[0], 16), parseInt(hexArr[1], 16), parseInt(hexArr[2], 16)];
+
+      let res = `rgb(${RGBArr[0]},${RGBArr[1]},${RGBArr[2]})`
+      if (res.indexOf("NaN") > -1) {
+        return hex
+      }
+      return res
+    }
+    console.log(hex2RGB("#abcfzz"))
+
+  </script>
 </body>
+
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div style="width: 100px; height: 80px;">
+      <div style="background-color: #000; padding-top: 40%;">
+        <!-- 为啥padding是40px -->
+      </div>
+    </div>
+    <script>
+      Function.prototype.NewBind = function () {
+        let _this = this;
+        let args = arguments.slice(1, arguments.length);
+        let context = arguments[1];
+        return function () {
+          this.apply(context, args);
+        };
+      };
+    </script>
+  </body>
+</html>
+4564565
